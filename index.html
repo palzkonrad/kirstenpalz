@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIRSTEN PALZ</title>
+    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar">
+            <div class="sidebar-header">
+                <a href="#" class="nav-link project-link" data-project-id="about" id="about-toggle" style="text-decoration: none; color: inherit; border: none;">
+                    <h1 class="logo-text">KIRSTEN PALZ <span style="font-size: 10px; vertical-align: middle;">▼</span></h1>
+                </a>
+                <ul class="sub-nav-links" id="about-dropdown" style="display: none; padding-top: 15px; padding-left: 0; list-style: none;">
+                    <li><a href="#" class="nav-link project-link" data-project-id="now" style="font-size: 11px;">// NOW</a></li>
+                    <li><a href="#" class="nav-link project-link" data-project-id="cv" style="font-size: 11px;">C.V.</a></li>
+                </ul>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active" data-target="home">PROJECTS</a></li>
+                <li><a href="#" class="nav-link" data-target="engagement">ENGAGEMENT</a></li>
+                <li><a href="#" class="nav-link project-link" data-project-id="sculpture">SCULPTURE AS WRITING</a></li>
+                <li><a href="#" class="nav-link project-link" data-project-id="absences">INVENTORY OF ABSENCES</a></li>
+                <li><a href="#" class="nav-link project-link" data-project-id="ai-research">A.I. ARTIFICIAL INTELLIGENCE</a></li>
+                <li><a href="#" class="nav-link project-link" data-project-id="thanks">THANKS</a></li>
+            </ul>
+        </nav>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <header class="mobile-header">
+                <h1 class="logo-text-mobile">KIRSTEN PALZ</h1>
+                <button class="menu-toggle" id="menuToggle">MENU</button>
+            </header>
+
+            <div class="content-wrapper">
+                
+                <!-- Section: Home (Directory) -->
+                <section id="home" class="content-section active">
+                    <div class="section-header">
+                        <h2>PROJECTS</h2>
+                        <div class="header-line"></div>
+                    </div>
+                    
+                    <div class="brutalist-list">
+                        <a href="#" class="brutalist-item project-link" data-project-id="chronicle"><span>CHRONICLE OF EXTINCTION</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="probes"><span>PROBES OF EXTINCTION</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="below-sun"><span>BELOW THE SUN</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="substances"><span>SUBSTANCES</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="temperatures"><span>TEMPERATURES</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="impact-china"><span>IMPACT CHINA / 影响</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="impact"><span>IMPACT</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="urhuette"><span>URHÜTTE</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="forest"><span>FOREST RESEARCH PLATFORM</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="sound-1"><span>SOUND I</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="sound-2"><span>SOUND II</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="works"><span>100 WORKS</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="algorithm"><span>SET//ALGORITHM</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="transmitter"><span>TRANSMITTER</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="choreography"><span>CHOREOGRAPHY</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="song-books"><span>SONG BOOKS</span><span class="arrow">+</span></a>
+                    </div>
+                </section>
+
+                <!-- Section: Engagement -->
+                <section id="engagement" class="content-section">
+                    <div class="section-header">
+                        <h2>ENGAGEMENT</h2>
+                        <div class="header-line"></div>
+                    </div>
+                    
+                    <div class="brutalist-list">
+                        <a href="#" class="brutalist-item project-link" data-project-id="le-foyer"><span>LE FOYER DU CHÂTEAU</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="art-feminism"><span>ART + FEMINISM</span><span class="arrow">+</span></a>
+                        <a href="#" class="brutalist-item project-link" data-project-id="book-fairs"><span>BOOK FAIRS</span><span class="arrow">+</span></a>
+                <a href="#" class="brutalist-item project-link" data-project-id="acta"><span>ACTA 12</span><span class="arrow">+</span></a>
+                    </div>
+                </section>
+
+                <!-- Section: Dynamic Project Detail -->
+                <section id="project-detail" class="content-section">
+                    <button class="back-btn" id="backToDirectory">
+                        <span class="arrow">←</span> BACK TO DIRECTORY
+                    </button>
+
+                    <div class="section-header" style="margin-top: 40px;">
+                        <h2 id="detail-title">PROJECT TITLE</h2>
+                        <div class="header-line"></div>
+                    </div>
+                    
+                    <div class="project-content">
+                        <div class="brutalist-post" id="detail-description">
+                            <p>Loading project description...</p>
+                        </div>
+                        
+                        <div class="project-images" id="detail-images">
+                            <!-- Images will be injected here via JS -->
+                        </div>
+                    </div>
+                </section>
+
+
+
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

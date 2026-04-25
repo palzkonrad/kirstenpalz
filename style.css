@@ -1,0 +1,423 @@
+html {
+    scroll-behavior: smooth;
+}
+
+/* Rick Owens / Helmut Lang Brutalist Aesthetic */
+
+:root {
+    --bg-color: #FAFAFA; /* Off-white, slightly starker than Apple's gray */
+    --text-color: #000000;
+    --border-color: #000000;
+    --hover-bg: #E0E0E0;
+    --hover-text: #000000;
+    
+    --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-logo: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+/* Optional Dark Mode (though brutalism often thrives in light mode, Dark Mode is also valid) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --bg-color: #000000;
+        --text-color: #FFFFFF;
+        --border-color: #FFFFFF;
+        --hover-bg: #222222;
+        --hover-text: #FFFFFF;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    /* Absolute removal of all soft aesthetics */
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-family: var(--font-ui);
+    -webkit-font-smoothing: antialiased;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.4;
+    overflow: hidden;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+/* Layout */
+.app-container {
+    display: flex;
+    height: 100vh;
+    width: 100vw;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 280px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 40px 20px;
+    flex-shrink: 0;
+    border-right: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+    z-index: 10;
+}
+
+.sidebar-header {
+    margin-bottom: 60px;
+}
+
+.logo-text {
+    font-family: var(--font-logo);
+    font-size: 24px;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+
+.nav-links {
+    list-style: none;
+    flex-grow: 1;
+}
+
+.nav-links li {
+    margin-bottom: 8px;
+}
+
+.nav-link {
+    display: block;
+    padding: 10px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 400;
+    border-bottom: 1px solid transparent;
+    transition: all 0.1s linear; /* Instant transition */
+}
+
+.nav-link:hover {
+    border-bottom: 1px solid var(--border-color);
+}
+
+.nav-link.active {
+    font-weight: 700;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.sidebar-footer {
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-line {
+    height: 1px;
+    background-color: var(--border-color);
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.sub-link {
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: 11px;
+    letter-spacing: 0.5px;
+}
+
+.sub-link:hover {
+    text-decoration: line-through;
+}
+
+/* Main Content Area */
+.main-content {
+    flex-grow: 1;
+    height: 100%;
+    overflow-y: auto;
+    position: relative;
+    background-color: var(--bg-color);
+}
+
+.mobile-header {
+    display: none;
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    z-index: 20;
+    border-bottom: 1px solid var(--border-color);
+    background-color: var(--bg-color);
+}
+
+.logo-text-mobile {
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.menu-toggle {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    cursor: pointer;
+    font-size: 11px;
+    padding: 6px 12px;
+}
+
+.menu-toggle:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.content-wrapper {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 80px 40px;
+}
+
+/* Sections */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+    animation: starkFadeIn 0.2s linear forwards;
+}
+
+@keyframes starkFadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.section-header {
+    margin-bottom: 40px;
+}
+
+.section-header h2 {
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+}
+
+.header-line {
+    height: 1px;
+    background-color: var(--border-color);
+    width: 100%;
+}
+
+/* Brutalist List */
+.brutalist-list {
+    border-top: 1px solid var(--border-color);
+}
+
+.brutalist-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    color: var(--text-color);
+    text-decoration: none;
+    border-bottom: 1px solid var(--border-color);
+    font-size: 13px;
+    transition: background-color 0s;
+}
+
+.brutalist-item {
+    transition: all 0.2s ease-in-out;
+}
+.brutalist-item:hover {
+    background-color: var(--text-color);
+    color: var(--bg-color);
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.arrow {
+    font-size: 16px;
+}
+
+/* Grid layout for C.V. */
+.brutalist-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.grid-cell {
+    border-top: 1px solid var(--border-color);
+    padding-top: 20px;
+}
+
+.grid-cell h4 {
+    font-size: 11px;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.grid-cell p, .grid-cell ul {
+    font-size: 13px;
+    line-height: 1.6;
+    letter-spacing: 0.5px;
+}
+
+.grid-cell ul {
+    list-style-type: none;
+}
+
+.grid-cell ul li {
+    margin-bottom: 8px;
+    border-bottom: 1px dotted var(--border-color);
+    padding-bottom: 4px;
+}
+
+/* Brutalist Post (For 'Now' and 'Impact China') */
+.brutalist-post {
+    border-top: 2px solid var(--text-color);
+    padding-top: 20px;
+}
+
+.brutalist-post h3 {
+    line-height: 1.2;
+}
+
+.brutalist-post p {
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+/* Headings within text blocks */
+.brutalist-post p strong {
+    font-size: 18px;
+    display: inline-block;
+    margin-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+/* Images Grid */
+.image-grid {
+    display: grid;
+    gap: 20px;
+}
+
+.image-grid.single-image {
+    grid-template-columns: 1fr;
+    max-width: 650px; /* Prevents single images from blowing up massively */
+}
+
+/* Multi-image Editorial Layout */
+.image-grid.multi-image {
+    grid-template-columns: 1fr 1fr; /* Two pictures next to each other */
+    align-items: start;
+}
+
+@media (max-width: 600px) {
+    .image-grid.multi-image {
+        grid-template-columns: 1fr; /* Standard stacking on mobile */
+    }
+}
+
+.image-box {
+    background-color: transparent;
+}
+
+.image-box img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.back-btn {
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 10px 20px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0s;
+    letter-spacing: 1.5px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.back-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.img-placeholder {
+    width: 100%;
+    height: 400px;
+    background-color: var(--hover-bg);
+    border: 1px solid var(--border-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 11px;
+    letter-spacing: 2px;
+    margin-bottom: 16px;
+}
+
+.img-placeholder.tall {
+    height: 600px;
+}
+
+.caption {
+    font-size: 11px;
+    font-weight: 700;
+    border-top: 1px solid var(--border-color);
+    padding-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Responsiveness */
+@media (max-width: 768px) {
+    .sidebar {
+        position: fixed;
+        left: -100%;
+        top: 0;
+        bottom: 0;
+        width: 100%; /* Take full screen */
+        max-width: none;
+        transition: left 0.2s linear;
+        border-right: none;
+    }
+
+    .sidebar.open {
+        left: 0;
+    }
+
+    .mobile-header {
+        display: flex;
+    }
+
+    .content-wrapper {
+        padding: 40px 20px;
+    }
+
+    .brutalist-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
+
+.brutalist-item .arrow {
+    transition: transform 0.2s ease;
+}
+.brutalist-item:hover .arrow {
+    transform: translateX(-5px);
+}
