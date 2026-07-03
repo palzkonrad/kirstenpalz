@@ -1,67 +1,155 @@
-html {
-    scroll-behavior: smooth;
-}
+/* ============================================================
+   KIRSTEN PALZ — EDITORIAL BRUTALISM / REFINED EXECUTION
+   ------------------------------------------------------------
+   North star: Rick Owens / Helmut Lang archive — austere
+   monochrome, hard 90° angles, uppercase voice. Modernised
+   with a true display/body type contrast, open all-caps
+   leading for legibility, hairline editorial rules, a faint
+   paper grain, and choreographed motion.
 
-/* Rick Owens / Helmut Lang Brutalist Aesthetic */
+   Owner: UXDesigner (visual layer). Architecture/routing and
+   JS interaction hooks owned by Founding Engineer — see the
+   handoff block at the bottom of this file.
+   ============================================================ */
 
+/* Display = Archivo Expanded (poster width). Body/UI = Archivo.
+   Loaded here so the type system lives with the design layer;
+   the <link> in index.html may be consolidated to this. */
+@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@600;700;800&display=swap');
+
+/* ============================================================
+   TOKENS
+   ============================================================ */
 :root {
-    --bg-color: #FAFAFA; /* Off-white, slightly starker than Apple's gray */
-    --text-color: #000000;
-    --border-color: #000000;
-    --hover-bg: #E0E0E0;
-    --hover-text: #000000;
-    
-    --font-ui: "Helvetica Neue", Helvetica, Arial, sans-serif;
-    --font-logo: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    /* Palette — paper & ink */
+    --bg-color: #FAFAF7;
+    --text-color: #0A0A0A;
+    --border-color: #0A0A0A;
+    --border-soft: rgba(10, 10, 10, 0.14);
+    --border-hair: rgba(10, 10, 10, 0.28);
+    --muted: rgba(10, 10, 10, 0.50);
+    --hover-bg: #ECECE7;
+
+    /* Type families */
+    --font-ui: "Archivo", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    --font-display: "Archivo Expanded", "Archivo", "Helvetica Neue", Arial, sans-serif;
+
+    /* Fluid type scale — poster masthead down to label */
+    --fs-display: clamp(38px, 6.2vw, 84px);   /* masthead: confident, editorial */
+    --fs-index: clamp(15px, 1.7vw, 21px);     /* directory project titles */
+    --fs-h3: clamp(16px, 2vw, 20px);
+    --fs-body: clamp(13.5px, 1.05vw, 15px);
+    --fs-nav: 12px;
+    --fs-label: 10px;
+
+    /* Tracking — big type tightens, all-caps text opens up */
+    --track-display: -0.018em;   /* large caps want negative tracking */
+    --track-index: 0.005em;      /* near-zero: index titles read as words */
+    --track-nav: 0.14em;
+    --track-body: 0.05em;        /* small caps need air to read */
+    --track-label: 0.2em;
+
+    /* Spacing scale */
+    --space-2xs: 6px;
+    --space-xs: 10px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 40px;
+    --space-xl: clamp(48px, 7vh, 80px);
+
+    /* Measure — comfortable reading width for all-caps long-form */
+    --measure: 60ch;
+
+    /* Motion */
+    --ease: cubic-bezier(0.22, 1, 0.36, 1);
+    --dur-fast: 0.28s;
+    --dur: 0.45s;
+    --dur-slow: 1.1s;
 }
 
-/* Optional Dark Mode (though brutalism often thrives in light mode, Dark Mode is also valid) */
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: #000000;
-        --text-color: #FFFFFF;
-        --border-color: #FFFFFF;
-        --hover-bg: #222222;
-        --hover-text: #FFFFFF;
+        --bg-color: #0A0A0A;
+        --text-color: #F2F2EF;
+        --border-color: #F2F2EF;
+        --border-soft: rgba(242, 242, 239, 0.18);
+        --border-hair: rgba(242, 242, 239, 0.34);
+        --muted: rgba(242, 242, 239, 0.56);
+        --hover-bg: #161616;
     }
+}
+
+/* ============================================================
+   RESET / BASE
+   ============================================================ */
+html {
+    scroll-behavior: smooth;
 }
 
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    /* Absolute removal of all soft aesthetics */
+    /* Brutalist: no soft aesthetics, ever */
     border-radius: 0 !important;
     box-shadow: none !important;
     font-family: var(--font-ui);
     -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
     text-transform: uppercase;
-    letter-spacing: 1px;
+}
+
+::selection {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 1px solid var(--border-color);
+    outline-offset: 4px;
 }
 
 body {
     background-color: var(--bg-color);
     color: var(--text-color);
-    line-height: 1.4;
+    line-height: 1.45;
     overflow: hidden;
-    font-size: 13px;
+    font-size: var(--fs-body);
     font-weight: 400;
+    letter-spacing: var(--track-body);
 }
 
-/* Layout */
+/* Faint paper grain — raw editorial atmosphere, fixed, inert */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    pointer-events: none;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ============================================================
+   LAYOUT
+   ============================================================ */
 .app-container {
     display: flex;
     height: 100vh;
+    height: 100dvh;   /* dynamic vh: avoids mobile browser-chrome cutoff */
     width: 100vw;
 }
 
-/* Sidebar Navigation */
+/* ============================================================
+   SIDEBAR NAVIGATION
+   ============================================================ */
 .sidebar {
-    width: 280px;
+    width: 304px;
     height: 100%;
     display: flex;
     flex-direction: column;
-    padding: 40px 20px;
+    padding: 48px 34px 32px;
     flex-shrink: 0;
     border-right: 1px solid var(--border-color);
     background-color: var(--bg-color);
@@ -69,14 +157,42 @@ body {
 }
 
 .sidebar-header {
-    margin-bottom: 60px;
+    margin-bottom: 56px;
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
 }
 
 .logo-text {
-    font-family: var(--font-logo);
-    font-size: 24px;
-    font-weight: 700;
-    letter-spacing: 2px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.12;
+}
+
+.sub-nav-links {
+    list-style: none;
+    padding: 14px 0 0;
+    border-left: 1px solid var(--border-soft);
+    margin-top: 6px;
+}
+
+.sub-nav-links li {
+    padding-left: 14px;
+}
+
+.sub-nav-links .nav-link {
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    color: var(--muted);
+}
+
+.sub-nav-links .nav-link:hover {
+    color: var(--text-color);
 }
 
 .nav-links {
@@ -85,61 +201,100 @@ body {
 }
 
 .nav-links li {
-    margin-bottom: 8px;
+    margin-bottom: 2px;
 }
 
 .nav-link {
-    display: block;
-    padding: 10px 0;
+    display: inline-block;
+    position: relative;
+    padding: 9px 0;
     color: var(--text-color);
     text-decoration: none;
-    font-size: 13px;
+    font-size: var(--fs-nav);
     font-weight: 400;
-    border-bottom: 1px solid transparent;
-    transition: all 0.1s linear; /* Instant transition */
+    letter-spacing: var(--track-nav);
+    transition: color var(--dur-fast) var(--ease), opacity var(--dur-fast) var(--ease);
 }
 
-.nav-link:hover {
-    border-bottom: 1px solid var(--border-color);
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 5px;
+    width: 100%;
+    height: 1px;
+    background: var(--border-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--dur) var(--ease);
+}
+
+.nav-link:hover::after,
+.nav-link.active::after {
+    transform: scaleX(1);
 }
 
 .nav-link.active {
     font-weight: 700;
-    border-bottom: 1px solid var(--border-color);
+}
+
+/* Logo keeps its own treatment — no underline animation */
+.logo-link::after {
+    display: none;
 }
 
 .sidebar-footer {
-    padding-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
+    padding-top: 24px;
 }
 
 .footer-line {
     height: 1px;
     background-color: var(--border-color);
     width: 100%;
-    margin-bottom: 20px;
+    margin-bottom: 16px;
+}
+
+.meta-line {
+    font-size: var(--fs-label);
+    letter-spacing: var(--track-label);
+    color: var(--muted);
+    margin-bottom: 6px;
 }
 
 .sub-link {
     color: var(--text-color);
     text-decoration: none;
     font-size: 11px;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.08em;
 }
 
 .sub-link:hover {
     text-decoration: line-through;
 }
 
-/* Main Content Area */
+/* ============================================================
+   MAIN CONTENT AREA
+   ============================================================ */
 .main-content {
     flex-grow: 1;
     height: 100%;
     overflow-y: auto;
     position: relative;
     background-color: var(--bg-color);
+    scrollbar-width: thin;
+    scrollbar-color: var(--border-hair) transparent;
+}
+
+.main-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.main-content::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+    background: var(--border-hair);
 }
 
 .mobile-header {
@@ -148,19 +303,24 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 60px;
+    /* Grow the bar by the notch height so content clears the status bar.
+       env() resolves to 0 unless index.html sets viewport-fit=cover. */
+    height: calc(60px + env(safe-area-inset-top));
+    padding-top: env(safe-area-inset-top);
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding-left: max(20px, env(safe-area-inset-left));
+    padding-right: max(20px, env(safe-area-inset-right));
     z-index: 20;
     border-bottom: 1px solid var(--border-color);
     background-color: var(--bg-color);
 }
 
 .logo-text-mobile {
-    font-size: 16px;
-    font-weight: 700;
-    letter-spacing: 1.5px;
+    font-family: var(--font-display);
+    font-size: 14px;
+    font-weight: 800;
+    letter-spacing: 0.06em;
 }
 
 .menu-toggle {
@@ -169,7 +329,13 @@ body {
     color: var(--text-color);
     cursor: pointer;
     font-size: 11px;
-    padding: 6px 12px;
+    letter-spacing: var(--track-nav);
+    /* WCAG 2.5.5 / Fitts: comfortable 44px touch target */
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 16px;
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
 .menu-toggle:hover {
@@ -178,35 +344,75 @@ body {
 }
 
 .content-wrapper {
-    max-width: 800px;
+    max-width: 920px;
     margin: 0 auto;
-    padding: 80px 40px;
+    padding: clamp(48px, 9vh, 104px) clamp(28px, 5vw, 68px);
 }
 
-/* Sections */
+/* ============================================================
+   SECTIONS + ENTRANCE CHOREOGRAPHY
+   ============================================================ */
 .content-section {
     display: none;
 }
 
 .content-section.active {
     display: block;
-    animation: starkFadeIn 0.2s linear forwards;
 }
 
-@keyframes starkFadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
+@keyframes riseIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to   { opacity: 1; transform: none; }
 }
+
+.content-section.active .section-header {
+    animation: riseIn 0.55s var(--ease) backwards;
+}
+
+.content-section.active .brutalist-post {
+    animation: riseIn 0.6s var(--ease) 0.08s backwards;
+}
+
+.content-section.active .project-images {
+    animation: riseIn 0.65s var(--ease) 0.16s backwards;
+}
+
+.content-section.active .back-btn {
+    animation: riseIn 0.5s var(--ease) backwards;
+}
+
+.content-section.active .brutalist-item {
+    animation: riseIn 0.5s var(--ease) backwards;
+}
+
+.brutalist-item:nth-child(1)  { animation-delay: 0.04s; }
+.brutalist-item:nth-child(2)  { animation-delay: 0.075s; }
+.brutalist-item:nth-child(3)  { animation-delay: 0.11s; }
+.brutalist-item:nth-child(4)  { animation-delay: 0.145s; }
+.brutalist-item:nth-child(5)  { animation-delay: 0.18s; }
+.brutalist-item:nth-child(6)  { animation-delay: 0.215s; }
+.brutalist-item:nth-child(7)  { animation-delay: 0.25s; }
+.brutalist-item:nth-child(8)  { animation-delay: 0.285s; }
+.brutalist-item:nth-child(9)  { animation-delay: 0.32s; }
+.brutalist-item:nth-child(10) { animation-delay: 0.355s; }
+.brutalist-item:nth-child(11) { animation-delay: 0.39s; }
+.brutalist-item:nth-child(12) { animation-delay: 0.425s; }
+.brutalist-item:nth-child(13) { animation-delay: 0.46s; }
+.brutalist-item:nth-child(14) { animation-delay: 0.495s; }
+.brutalist-item:nth-child(15) { animation-delay: 0.53s; }
+.brutalist-item:nth-child(16) { animation-delay: 0.565s; }
 
 .section-header {
-    margin-bottom: 40px;
+    margin-bottom: var(--space-xl);
 }
 
 .section-header h2 {
-    font-size: 14px;
-    font-weight: 700;
-    letter-spacing: 2px;
-    margin-bottom: 12px;
+    font-family: var(--font-display);
+    font-size: var(--fs-display);
+    font-weight: 800;
+    letter-spacing: var(--track-display);
+    line-height: 0.88;            /* tighter optical block at poster scale */
+    margin-bottom: clamp(20px, 2.4vh, 30px);
 }
 
 .header-line {
@@ -215,38 +421,103 @@ body {
     width: 100%;
 }
 
-/* Brutalist List */
+.detail-header {
+    margin-top: 44px;
+}
+
+/* ============================================================
+   BRUTALIST LIST (PROJECT DIRECTORY)
+   ============================================================ */
 .brutalist-list {
     border-top: 1px solid var(--border-color);
+    counter-reset: proj;
 }
 
 .brutalist-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 0;
+    counter-increment: proj;
+    position: relative;
+    isolation: isolate;
+    display: grid;
+    grid-template-columns: 4ch 1fr auto;
+    align-items: baseline;
+    gap: clamp(16px, 2.4vw, 30px);
+    padding: clamp(20px, 2.5vh, 28px) 4px;
     color: var(--text-color);
     text-decoration: none;
     border-bottom: 1px solid var(--border-color);
     font-size: 13px;
-    transition: background-color 0s;
+    letter-spacing: 0.1em;
+    transition: color var(--dur) var(--ease);
 }
 
-.brutalist-item {
-    transition: all 0.2s ease-in-out;
+/* Project title reads as a confident catalogue entry, not a list item */
+.brutalist-item > span:first-of-type {
+    font-family: var(--font-display);
+    font-size: var(--fs-index);
+    font-weight: 600;
+    letter-spacing: var(--track-index);
+    line-height: 1.05;
 }
-.brutalist-item:hover {
-    background-color: var(--text-color);
+
+.brutalist-item::before {
+    content: counter(proj, decimal-leading-zero);
+    font-size: var(--fs-label);
+    letter-spacing: 0.14em;
+    color: var(--muted);
+    transition: color var(--dur) var(--ease);
+}
+
+/* Ink wipe on hover */
+.brutalist-item::after {
+    content: "";
+    position: absolute;
+    inset: 0 -22px;
+    background: var(--text-color);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform var(--dur) var(--ease);
+    z-index: -1;
+}
+
+.brutalist-item:hover,
+.brutalist-item:focus-visible {
     color: var(--bg-color);
-    padding-left: 20px;
-    padding-right: 20px;
+}
+
+.brutalist-item:hover::before,
+.brutalist-item:focus-visible::before {
+    color: var(--bg-color);
+}
+
+.brutalist-item:hover::after,
+.brutalist-item:focus-visible::after {
+    transform: scaleX(1);
+}
+
+.brutalist-item > span:first-of-type {
+    transition: transform var(--dur) var(--ease);
+}
+
+.brutalist-item:hover > span:first-of-type {
+    transform: translateX(12px);
 }
 
 .arrow {
-    font-size: 16px;
+    font-size: 15px;
+    line-height: 1;
 }
 
-/* Grid layout for C.V. */
+.brutalist-item .arrow {
+    transition: transform var(--dur) var(--ease);
+}
+
+.brutalist-item:hover .arrow {
+    transform: rotate(90deg);
+}
+
+/* ============================================================
+   GRID LAYOUT FOR C.V. (legacy hook, kept)
+   ============================================================ */
 .brutalist-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -262,12 +533,14 @@ body {
     font-size: 11px;
     margin-bottom: 20px;
     font-weight: 700;
+    letter-spacing: 0.14em;
 }
 
-.grid-cell p, .grid-cell ul {
+.grid-cell p,
+.grid-cell ul {
     font-size: 13px;
-    line-height: 1.6;
-    letter-spacing: 0.5px;
+    line-height: 1.7;
+    letter-spacing: 0.04em;
 }
 
 .grid-cell ul {
@@ -276,14 +549,21 @@ body {
 
 .grid-cell ul li {
     margin-bottom: 8px;
-    border-bottom: 1px dotted var(--border-color);
-    padding-bottom: 4px;
+    border-bottom: 1px solid var(--border-soft);
+    padding-bottom: 6px;
 }
 
-/* Brutalist Post (For 'Now' and 'Impact China') */
+/* ============================================================
+   BRUTALIST POST (LONG-FORM TEXT, C.V., PROJECT PAGES)
+   ------------------------------------------------------------
+   Readability is the priority here. The content is authored in
+   all-caps, so we buy legibility with open tracking, generous
+   leading, a constrained measure, and full-ink contrast.
+   ============================================================ */
 .brutalist-post {
     border-top: 2px solid var(--text-color);
-    padding-top: 20px;
+    padding-top: 30px;
+    max-width: var(--measure);
 }
 
 .brutalist-post h3 {
@@ -291,44 +571,117 @@ body {
 }
 
 .brutalist-post p {
-    font-size: 14px;
+    font-size: var(--fs-body);
+    line-height: 1.85;
+    letter-spacing: var(--track-body);
+    color: var(--text-color);
+    margin-bottom: 1.6em;
+}
+
+/* The first <strong> in each block reads as a section title.
+   On the C.V. these act as standing headers above each list. */
+.brutalist-post p strong {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: var(--fs-h3);
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    line-height: 1.3;
+    margin-bottom: 0.4em;
+}
+
+/* Injected lists (C.V.) — editorial rows, not browser bullets */
+.brutalist-post ul {
+    list-style: none;
+    margin: 0 0 2.8em;
+    border-top: 1px solid var(--border-hair);
+}
+
+.brutalist-post ul li {
+    position: relative;
+    padding: 12px 0 12px 26px;
+    border-bottom: 1px solid var(--border-soft);
+    font-size: 13.5px;
     line-height: 1.6;
+    letter-spacing: 0.045em;
+    transition: padding-left var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+/* Tick marker — replaces the bullet, reinforces the archive feel */
+.brutalist-post ul li::before {
+    content: "—";
+    position: absolute;
+    left: 0;
+    top: 12px;
+    color: var(--muted);
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.brutalist-post ul li:hover {
+    padding-left: 32px;
+}
+
+.brutalist-post ul li:hover::before {
+    color: var(--text-color);
+}
+
+.brutalist-post a {
+    color: inherit;
+    text-decoration: none;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 100% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    padding-bottom: 1px;
+    transition: opacity var(--dur-fast) var(--ease);
+}
+
+.brutalist-post a:hover {
+    opacity: 0.55;
+}
+
+.brutalist-post iframe {
+    border: 1px solid var(--border-soft);
     margin-bottom: 24px;
 }
 
-/* Headings within text blocks */
-.brutalist-post p strong {
-    font-size: 18px;
-    display: inline-block;
-    margin-bottom: 15px;
-    letter-spacing: 2px;
-}
-
-/* Images Grid */
+/* ============================================================
+   IMAGES — EDITORIAL FRAMES
+   ============================================================ */
 .image-grid {
     display: grid;
-    gap: 20px;
+    gap: clamp(24px, 4vw, 44px);
+}
+
+#detail-images .image-grid {
+    margin-top: 56px;
 }
 
 .image-grid.single-image {
     grid-template-columns: 1fr;
-    max-width: 650px; /* Prevents single images from blowing up massively */
+    max-width: 720px; /* Keep solo images from blowing up */
 }
 
-/* Multi-image Editorial Layout */
+/* Multi-image editorial layout — two columns */
 .image-grid.multi-image {
-    grid-template-columns: 1fr 1fr; /* Two pictures next to each other */
+    grid-template-columns: 1fr 1fr;
     align-items: start;
 }
 
 @media (max-width: 600px) {
     .image-grid.multi-image {
-        grid-template-columns: 1fr; /* Standard stacking on mobile */
+        grid-template-columns: 1fr;
     }
 }
 
 .image-box {
     background-color: transparent;
+    margin-bottom: 12px;
+}
+
+.image-frame {
+    overflow: hidden;
+    background-color: var(--hover-bg);
 }
 
 .image-box img {
@@ -337,19 +690,49 @@ body {
     display: block;
 }
 
+.image-frame img {
+    width: 100%;
+    transform: scale(1.004);
+    transition: transform var(--dur-slow) var(--ease);
+}
+
+.image-box:hover .image-frame img {
+    transform: scale(1.035);
+}
+
+.image-caption {
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.08em;
+    line-height: 1.55;
+    color: var(--muted);
+    border-top: 1px solid var(--border-soft);
+    padding-top: 10px;
+    margin-top: 12px;
+    text-align: left;
+}
+
+.image-caption a {
+    color: inherit;
+}
+
+/* ============================================================
+   BACK BUTTON
+   ============================================================ */
 .back-btn {
     background: transparent;
     border: 1px solid var(--border-color);
     color: var(--text-color);
-    padding: 10px 20px;
+    padding: 12px 22px;
+    min-height: 44px;   /* touch target floor (harmless on desktop) */
     font-size: 11px;
-    font-weight: 700;
+    font-weight: 500;
     cursor: pointer;
-    transition: all 0s;
-    letter-spacing: 1.5px;
-    display: flex;
+    letter-spacing: 0.16em;
+    display: inline-flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
 }
 
 .back-btn:hover {
@@ -357,6 +740,38 @@ body {
     color: var(--bg-color);
 }
 
+.back-btn .arrow {
+    transition: transform var(--dur-fast) var(--ease);
+}
+
+.back-btn:hover .arrow {
+    transform: translateX(-4px);
+}
+
+/* ============================================================
+   SCROLL REVEAL (progressive enhancement)
+   ------------------------------------------------------------
+   Elements tagged [data-reveal] start hidden ONLY when JS has
+   marked the document ready (html.js). Without JS they stay
+   visible — no content is ever locked behind a script.
+   Founding Engineer: add `document.documentElement.classList
+   .add('js')` and an IntersectionObserver that toggles
+   `.is-visible`. See handoff block below.
+   ============================================================ */
+html.js [data-reveal] {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+}
+
+html.js [data-reveal].is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* ============================================================
+   PLACEHOLDERS + CAPTIONS (legacy hooks, kept)
+   ============================================================ */
 .img-placeholder {
     width: 100%;
     height: 400px;
@@ -367,7 +782,7 @@ body {
     justify-content: center;
     color: var(--text-color);
     font-size: 11px;
-    letter-spacing: 2px;
+    letter-spacing: 0.16em;
     margin-bottom: 16px;
 }
 
@@ -384,21 +799,47 @@ body {
     justify-content: space-between;
 }
 
-/* Responsiveness */
+/* ============================================================
+   RESPONSIVENESS
+   ============================================================ */
+/* ── Phone & small tablet (≤768px) ─────────────────────────── */
 @media (max-width: 768px) {
     .sidebar {
         position: fixed;
-        left: -100%;
-        top: 0;
-        bottom: 0;
-        width: 100%; /* Take full screen */
+        inset: 0;
+        width: 100%;
         max-width: none;
-        transition: left 0.2s linear;
+        transform: translateX(-100%);
+        transition: transform var(--dur) var(--ease);
         border-right: none;
+        /* Clear the 60px mobile-header + notch up top, home-indicator
+           at the bottom, and curved-screen insets at the sides. */
+        padding:
+            calc(88px + env(safe-area-inset-top))
+            max(28px, env(safe-area-inset-right))
+            calc(40px + env(safe-area-inset-bottom))
+            max(28px, env(safe-area-inset-left));
     }
 
     .sidebar.open {
-        left: 0;
+        transform: translateX(0);
+    }
+
+    /* Larger touch targets inside the full-screen menu (WCAG 2.5.5) */
+    .sidebar .nav-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    .sidebar .nav-links li {
+        margin-bottom: 4px;
+    }
+
+    .sub-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
     }
 
     .mobile-header {
@@ -406,18 +847,183 @@ body {
     }
 
     .content-wrapper {
-        padding: 40px 20px;
+        /* 22px → 18px horizontal buys back reading width at 375px while
+           still honouring curved-screen safe areas. */
+        padding:
+            32px
+            max(18px, env(safe-area-inset-right))
+            calc(48px + env(safe-area-inset-bottom))
+            max(18px, env(safe-area-inset-left));
     }
 
     .brutalist-grid {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+
+    .brutalist-item {
+        gap: 16px;
+        padding: 19px 2px;
+    }
+
+    .brutalist-item::after {
+        inset: 0 -14px;
+    }
+
+    .section-header h2 {
+        font-size: clamp(28px, 8.5vw, 40px);
+    }
+
+    .brutalist-post p {
+        line-height: 1.8;
+    }
+
+    /* Detail-image stack: tighten the big top gap and placeholder heights
+       so phone scroll feels editorial, not cavernous. */
+    #detail-images .image-grid {
+        margin-top: 32px;
+    }
+
+    .img-placeholder {
+        height: 260px;
+    }
+
+    .img-placeholder.tall {
+        height: 380px;
+    }
 }
 
-.brutalist-item .arrow {
-    transition: transform 0.2s ease;
+/* ── Compact phones (≤380px: iPhone SE/12/13/14, Pixel) ────── */
+@media (max-width: 380px) {
+    .content-wrapper {
+        padding:
+            24px
+            max(16px, env(safe-area-inset-right))
+            calc(40px + env(safe-area-inset-bottom))
+            max(16px, env(safe-area-inset-left));
+    }
+
+    /* Masthead pulls in so PROJECTS / project titles never clip the edge */
+    .section-header h2 {
+        font-size: clamp(26px, 9vw, 32px);
+        line-height: 0.92;
+    }
+
+    .section-header {
+        margin-bottom: 36px;
+    }
+
+    /* Directory rows: drop the year column gap, hold the title legible */
+    .brutalist-item {
+        gap: 12px;
+        padding: 16px 2px;
+    }
+
+    .brutalist-item > span:first-of-type {
+        font-size: 15px;
+    }
+
+    /* Long-form caps: hold an editorial rhythm, don't crush the leading */
+    .brutalist-post {
+        padding-top: 24px;
+    }
+
+    .brutalist-post p {
+        font-size: 14px;
+        line-height: 1.75;
+        margin-bottom: 1.4em;
+    }
+
+    .brutalist-post p strong {
+        font-size: 17px;
+    }
+
+    .brutalist-post ul li {
+        font-size: 13px;
+        padding: 11px 0 11px 22px;
+    }
+
+    .image-grid {
+        gap: 22px;
+    }
+
+    .img-placeholder { height: 220px; }
+    .img-placeholder.tall { height: 320px; }
+
+    .logo-text-mobile {
+        font-size: 13px;
+        letter-spacing: 0.05em;
+    }
 }
-.brutalist-item:hover .arrow {
-    transform: translateX(-5px);
+
+/* ── Sidebar backdrop (hook for Founding Engineer) ─────────────
+   The mobile menu currently fills the screen, so a scrim is optional;
+   it's provided for when the drawer becomes partial-width. Engineer
+   injects/removes <div class="sidebar-backdrop"> and toggles `.open`.
+   Sits BELOW the sidebar (z-index 9) and ABOVE content. */
+.sidebar-backdrop {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10, 10, 10, 0.45);
+    z-index: 9;
+    opacity: 0;
+    transition: opacity var(--dur) var(--ease);
 }
+
+.sidebar-backdrop.open {
+    display: block;
+    opacity: 1;
+}
+
+@media (min-width: 769px) {
+    /* Desktop never shows the scrim — sidebar is docked. */
+    .sidebar-backdrop { display: none !important; }
+}
+
+/* ============================================================
+   REDUCED MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    html {
+        scroll-behavior: auto;
+    }
+
+    html.js [data-reveal] {
+        opacity: 1;
+        transform: none;
+    }
+}
+
+/* ============================================================
+   ENGINEER HANDOFF — Founding Engineer (script.js / index.html)
+   ------------------------------------------------------------
+   The visual layer above is complete and works with the current
+   DOM untouched. Two optional progressive enhancements unlock
+   the full effect, neither changes projectData or routing:
+
+   1) SCROLL REVEAL (used by `[data-reveal]` rules above)
+      - On load: document.documentElement.classList.add('js')
+      - After injecting project detail markup, add the attribute
+        data-reveal to each <figure class="image-box"> (and the
+        .brutalist-post), then observe them with an
+        IntersectionObserver that adds class 'is-visible' at
+        ~12% visibility (threshold 0.12, once).
+      - Fallback is built in: no JS => content stays visible.
+
+   2) ACTIVE-STATE SYNC (recognition over recall)
+      - When a sidebar .project-link is clicked, clear .active on
+        all .nav-link and set it on the clicked link if it lives
+        in the sidebar, so the nav reflects the open view.
+
+   Acceptance: reveal fires once per element, respects
+   prefers-reduced-motion (CSS already neutralises it), no layout
+   shift, routing/back-button unchanged.
+   ============================================================ */

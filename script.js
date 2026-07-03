@@ -1,7 +1,7 @@
 const projectData = {
     'about': {
         title: 'KIRSTEN PALZ',
-        description: "<p><strong>KIRSTEN PALZ</strong></p><p>KIRSTEN PALZ (KP) IS A CONCEPTUAL ARTIST WHOSE PRACTICE IS ROOTED IN RESEARCH, LANGUAGE, AND ACTIVISM. THE WORK ADDRESSES PRESSING GLOBAL ISSUES SUCH AS CLIMATE CHANGE, SPECIES EXTINCTION, THE INFLUENCE OF THE PHARMACEUTICAL INDUSTRY, DESTRUCTIVE CONSUMPTION PATTERNS, AND THE ACCELERATED DEGRADATION OF EARTH'S ECOSYSTEMS.</p><br><p>THE PRACTICE INTEGRATES FEMINIST AND CONCEPTUAL METHODOLOGIES WITH INTERDISCIPLINARY APPROACHES, RESEARCH-DRIVEN PROCESSES, AND NEW TECHNOLOGIES.</p><br><p>OVER THE PAST FIVE YEARS, KP HAS FOCUSED ON ARCHIVING THE DOCUMENTATION OF DESTRUCTION AND THE CHALLENGES OF THE ANTHROPOCENE AGE. THE ARCHIVE CHRONICLE OF EXTINCTION ENCOMPASSES PRINTS, PERFORMANCES, VIDEO WORKS, AND SOUND INSTALLATIONS. THESE WORKS SERVE AS BOTH ACTS OF ACTIVISM AND DOCUMENTATION.</p><br><p>KP'S METHODS INCLUDE SELF-WRITTEN TEXTS, THE USE OF AI, POP-CULTURAL AESTHETICS, AND SCIENTIFIC RESEARCH METHODOLOGIES, INCLUDING RESEARCH INTO DATA FROM INSTITUTIONAL LIBRARIES AND PRIVATE COMPANIES, TO CREATE KNOWLEDGE-BASED WORKS. KP\'S LATEST WORKS ARE COLLECTED IN THE CHRONICLE OF EXTINCTION ARCHIVE, WHICH CENTERS ON THEMES OF CLIMATE CHANGE AND THE DESTRUCTION OF BIODIVERSITY.</p><br><p>KP'S ARTISTIC PRACTICE IS ROOTED IN A DEEP INTEREST IN LANGUAGE AND ITS CAPACITY TO SERVE AS A CATALYST.</p><br><p>IN THE EARLY 1990S, KP ESTABLISHED A WRITING PRACTICE SHE LATER LABELED SCULPTURE AS WRITING. INITIALLY GROUNDED IN TECHNICAL MANUALS AND DIARY ENTRIES, THIS BODY OF WORK HAS EXPANDED TO INCLUDE SCORES, FLYERS, PLAYWRIGHTS, ARCHITECTURAL PLANS, CHOREOGRAPHIES, AND PROGRAMMING.</p>",
+        description: "<p><strong>KIRSTEN PALZ</strong></p><p>KIRSTEN PALZ (KP) IS A CONCEPTUAL ARTIST WHOSE PRACTICE IS ROOTED IN RESEARCH, LANGUAGE, AND ACTIVISM. THE WORK ADDRESSES PRESSING GLOBAL ISSUES SUCH AS CLIMATE CHANGE, SPECIES EXTINCTION, THE INFLUENCE OF THE PHARMACEUTICAL INDUSTRY, DESTRUCTIVE CONSUMPTION PATTERNS, AND THE ACCELERATED DEGRADATION OF EARTH'S ECOSYSTEMS.</p><p>THE PRACTICE INTEGRATES FEMINIST AND CONCEPTUAL METHODOLOGIES WITH INTERDISCIPLINARY APPROACHES, RESEARCH-DRIVEN PROCESSES, AND NEW TECHNOLOGIES.</p><p>OVER THE PAST FIVE YEARS, KP HAS FOCUSED ON ARCHIVING THE DOCUMENTATION OF DESTRUCTION AND THE CHALLENGES OF THE ANTHROPOCENE AGE. THE ARCHIVE CHRONICLE OF EXTINCTION ENCOMPASSES PRINTS, PERFORMANCES, VIDEO WORKS, AND SOUND INSTALLATIONS. THESE WORKS SERVE AS BOTH ACTS OF ACTIVISM AND DOCUMENTATION.</p><p>KP'S METHODS INCLUDE SELF-WRITTEN TEXTS, THE USE OF AI, POP-CULTURAL AESTHETICS, AND SCIENTIFIC RESEARCH METHODOLOGIES, INCLUDING RESEARCH INTO DATA FROM INSTITUTIONAL LIBRARIES AND PRIVATE COMPANIES, TO CREATE KNOWLEDGE-BASED WORKS. KP\'S LATEST WORKS ARE COLLECTED IN THE CHRONICLE OF EXTINCTION ARCHIVE, WHICH CENTERS ON THEMES OF CLIMATE CHANGE AND THE DESTRUCTION OF BIODIVERSITY.</p><p>KP'S ARTISTIC PRACTICE IS ROOTED IN A DEEP INTEREST IN LANGUAGE AND ITS CAPACITY TO SERVE AS A CATALYST.</p><p>IN THE EARLY 1990S, KP ESTABLISHED A WRITING PRACTICE SHE LATER LABELED SCULPTURE AS WRITING. INITIALLY GROUNDED IN TECHNICAL MANUALS AND DIARY ENTRIES, THIS BODY OF WORK HAS EXPANDED TO INCLUDE SCORES, FLYERS, PLAYWRIGHTS, ARCHITECTURAL PLANS, CHOREOGRAPHIES, AND PROGRAMMING.</p>",
         images: [{ src: "Kirsten-Palz-Berlin.jpeg", caption: "Kirsten Palz photographed by Till Cremer" }]
     },
 
@@ -10,7 +10,6 @@ const projectData = {
         description: `
 <p><strong>CHRONICLE OF EXTINCTION (2021–ONGOING)</strong></p>
 <p>CHRONICLE OF EXTINCTION IS A PROJECT DEDICATED TO DOCUMENTING EXTINCT SPECIES. THROUGH PRINTED SCORES, EACH WORK LISTS 12 MEMBERS OF A SPECIFIC EXTINCT SPECIES, NAMING THEM IN FULL ACCORDING TO SCIENTIFIC TAXONOMY, WHICH CLASSIFIES SPECIES BY GENUS, PHYLUM, AND OTHER CATEGORIES.</p>
-<br>
 <p><strong>FORMAT</strong></p>
 <p>THE PRINTS ARE VISUALLY FORMATTED LIKE MUSICAL SCORES, INVITING FUTURE INTERPRETATION AND PERFORMANCE. SUPPORTED BY THE BERLIN SENATE RESEARCH GRANT IN 2021, THIS ONGOING PROJECT ADDS TWELVE NEW BOOKS TO THE SERIES EACH YEAR, EXPANDING ITS SCOPE AND DEEPENING ITS ENGAGEMENT WITH THEMES OF LOSS AND MEMORY.</p>
 `,
@@ -44,14 +43,14 @@ const projectData = {
     },
     'temperatures': {
         title: 'TEMPERATURES',
-        description: '<p><strong>TEMPERATURES - PRECIPITATION - WIND (2020)</strong></p><p>THIS VISUAL RESEARCH INTO WEATHER EXAMINES DATA ON TEMPERATURES, PRECIPITATION, AND WIND. MEASUREMENTS FROM NYC’S WEATHER STATIONS, STARTING IN 1994, ARE TRANSLATED INTO SPIKE GRAPHS, REFLECTING THE DRAMATIC FLUCTUATIONS IN TEMPERATURE.</p><p>THE VIDEO WAS CREATED AS PART OF RE-IMAGINING AMERICA. THE EXHIBITION FEATURED WORKS BY ARTISTS WHO, OVER THE COURSE OF THEIR CAREERS, HAVE MOVED BETWEEN THE UNITED STATES AND GERMANY – PARTICULARLY BETWEEN NEW YORK CITY AND BERLIN. THROUGH THE SELECTED ARTWORKS, THE PROJECT EXPLORES NARRATIVES ABOUT THE SELF-UNDERSTANDING OF ARTISTS.</p><br><p>VIDEO: 1:36 MINUTES (PLAYED ON LOOP)</p>',
+        description: '<p><strong>TEMPERATURES - PRECIPITATION - WIND (2020)</strong></p><p>THIS VISUAL RESEARCH INTO WEATHER EXAMINES DATA ON TEMPERATURES, PRECIPITATION, AND WIND. MEASUREMENTS FROM NYC’S WEATHER STATIONS, STARTING IN 1994, ARE TRANSLATED INTO SPIKE GRAPHS, REFLECTING THE DRAMATIC FLUCTUATIONS IN TEMPERATURE.</p><p>THE VIDEO WAS CREATED AS PART OF RE-IMAGINING AMERICA. THE EXHIBITION FEATURED WORKS BY ARTISTS WHO, OVER THE COURSE OF THEIR CAREERS, HAVE MOVED BETWEEN THE UNITED STATES AND GERMANY – PARTICULARLY BETWEEN NEW YORK CITY AND BERLIN. THROUGH THE SELECTED ARTWORKS, THE PROJECT EXPLORES NARRATIVES ABOUT THE SELF-UNDERSTANDING OF ARTISTS.</p><p>VIDEO: 1:36 MINUTES (PLAYED ON LOOP)</p>',
         images: [
             { src: "Temperatures-1994.png", caption: "Temperatures (2021) video by Kirsten Palz" }
         ]
     },
     'forest': {
         title: 'FOREST RESEARCH PLATFORM',
-        description: '<p><strong>FOREST RESEARCH PLATFORM</strong></p><p>I AM PART OF THE MULTI-YEAR PROJECT INITIATED BY CHRISTL MUDRAK.</p><p style="line-height: 1.4; margin-top: 15px;">ZUR KIESGRUBE<br>414621 SCHÖNWEIDE-GLIEN<br>OT GRÜNEFELD<br>DEUTSCHLAND</p><p style="margin-top: 10px;">@FOREST_RESEARCH_PLATFORM</p><br><p>- AN INVITATION TO ENGAGE IN INTERACTIVE PROCESSES INVOLVING COLLABORATORS, PARTICIPANTS, AS WELL AS ANIMALS AND PLANTS, SERVE IN THIS RESEARCH PROJECT TO REVEAL AUTHORSHIP AS A CONNECTING AND COMMUNICATIVE ELEMENT.</p><p>IN A FOREST SHAPED AND MANAGED BY HUMAN HANDS, THE METHODS AND PRINCIPLES OF NONVIOLENCE TOWARDS ALL FORMS OF LIFE WILL BE EXPLORED AND REFLECTED UPON THROUGH ARTISTIC MEANS. IMAGINE, FOR A MOMENT, THAT ALL BEINGS AND SUBSTANCES IN THIS PLACE WERE REGARDED AS EQUAL FROM A HUMAN PERSPECTIVE, WHAT IMPLICATIONS MIGHT THIS HAVE FOR OUR ACTIONS AND WAYS OF COEXISTING?</p><p>THROUGHOUT THE MULTI-YEAR PROJECT, INTERNATIONAL ARTISTS WILL BE INVITED TO CREATE PERMANENT WORKS BASED ON THE PREMISE OF COEXISTENCE IN NONVIOLENCE. IN PARALLEL, REGULAR GUIDED TOURS, WORKSHOPS FOR STUDENTS AND ENTHUSIASTS, AS WELL AS PERFORMANCES, INTERVENTIONS, AND LECTURES, WILL OFFER BOTH THE PUBLIC AND THE ARTISTS DIVERSE INSIGHTS INTO THE EXHIBITION\'S THEME.</p><p><a href="HTTPS://WWW.INSTAGRAM.COM/FOREST_RESEARCH_PLATFORM/" target="_blank" style="color: inherit; text-decoration: underline;">HTTPS://WWW.INSTAGRAM.COM/FOREST_RESEARCH_PLATFORM/</a></p>',
+        description: '<p><strong>FOREST RESEARCH PLATFORM</strong></p><p>I AM PART OF THE MULTI-YEAR PROJECT INITIATED BY CHRISTL MUDRAK.</p><p style="line-height: 1.4; margin-top: 15px;">ZUR KIESGRUBE<br>414621 SCHÖNWEIDE-GLIEN<br>OT GRÜNEFELD<br>DEUTSCHLAND</p><p style="margin-top: 10px;">@FOREST_RESEARCH_PLATFORM</p><p>- AN INVITATION TO ENGAGE IN INTERACTIVE PROCESSES INVOLVING COLLABORATORS, PARTICIPANTS, AS WELL AS ANIMALS AND PLANTS, SERVE IN THIS RESEARCH PROJECT TO REVEAL AUTHORSHIP AS A CONNECTING AND COMMUNICATIVE ELEMENT.</p><p>IN A FOREST SHAPED AND MANAGED BY HUMAN HANDS, THE METHODS AND PRINCIPLES OF NONVIOLENCE TOWARDS ALL FORMS OF LIFE WILL BE EXPLORED AND REFLECTED UPON THROUGH ARTISTIC MEANS. IMAGINE, FOR A MOMENT, THAT ALL BEINGS AND SUBSTANCES IN THIS PLACE WERE REGARDED AS EQUAL FROM A HUMAN PERSPECTIVE, WHAT IMPLICATIONS MIGHT THIS HAVE FOR OUR ACTIONS AND WAYS OF COEXISTING?</p><p>THROUGHOUT THE MULTI-YEAR PROJECT, INTERNATIONAL ARTISTS WILL BE INVITED TO CREATE PERMANENT WORKS BASED ON THE PREMISE OF COEXISTENCE IN NONVIOLENCE. IN PARALLEL, REGULAR GUIDED TOURS, WORKSHOPS FOR STUDENTS AND ENTHUSIASTS, AS WELL AS PERFORMANCES, INTERVENTIONS, AND LECTURES, WILL OFFER BOTH THE PUBLIC AND THE ARTISTS DIVERSE INSIGHTS INTO THE EXHIBITION\'S THEME.</p><p><a href="HTTPS://WWW.INSTAGRAM.COM/FOREST_RESEARCH_PLATFORM/" target="_blank" style="color: inherit; text-decoration: underline;">HTTPS://WWW.INSTAGRAM.COM/FOREST_RESEARCH_PLATFORM/</a></p>',
         images: [
             { src: "forest-research-platform-2.png", caption: "Poster in Berlin to Forest Research Platform / 1 of 280 threes planted by Kirsten Palz in Krämerwald." },
             { src: "Invitation.png", caption: "Poster in Berlin to Forest Research Platform / 1 of 280 threes planted by Kirsten Palz in Krämerwald." }
@@ -64,7 +63,7 @@ const projectData = {
     },
     'sound-2': {
         title: 'SOUND II',
-        description: '<p><strong>SOUND II</strong></p><p>MY WORK WITH SOUND ENGAGES WITH THE ENVIRONMENT AND CONTRIBUTES TO A BROADER RESEARCH INTO SOUND AS MATERIALITY.</p><p>THE FIVE SOUNDS IS COMPOSED FOR THE VIDEO IMPACT ON ENVIRONMENTAL DEATH CAUSED BY THE SLOW, CONTINUOUS SPREAD OF CHEMICAL CONTAMINANTS IN SOIL.</p><p>ALL SOUNDS BY KIRSTEN PALZ WITH SAMPLES BY HONOKA UCHIITO.</p><p>WITH AN EDUCATIONAL TRAINING IN YOUTH OF READING AND WRITING CLASSICAL SCORE MUSIC, I BEGAN EXPLORING SOUND IN 2020 THROUGH COMPUTER-GENERATED AUDIO, DIGITAL SOUND ENGINEERING (DAW), AND LIVE FIELD RECORDINGS. SINCE THEN, I HAVE USED SOUND AS AN ENVIRONMENTAL LAYER WITHIN SEVERAL EXHIBITIONS.</p><br><p><strong>PSYCHOTROPIC SCULPTURE 2016</strong></p><p>PERFORMANCE IN TOKYO WONDER SITE, JAPAN. IT WAS CONCEIVED SPECIFICALLY FOR THE RESIDENCY BUILDING’S FLOOR PLAN. THE PIECE GREW OUT OF AN IMAGINATIVE INTERPRETATION OF THE SITE, DEVELOPED BY STUDYING ITS ARCHITECTURAL DRAWINGS. IT WAS CREATED ON THE INVITATION OF CURATOR ISABEL DE SENA, WHO WAS IN TOKYO FOR A RESEARCH TRIP ON THE JAPANESE GROUP GUTAI.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/psychotropic-sculpture&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 13 BERLIN (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE STREETS OF BERLIN.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-13&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 5 BERLIN (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE SUBWAY SYSTEM OF BERLIN.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-5&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 12 NYC (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE STREETS OF NYC.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-12&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe>',
+        description: '<p><strong>SOUND II</strong></p><p>MY WORK WITH SOUND ENGAGES WITH THE ENVIRONMENT AND CONTRIBUTES TO A BROADER RESEARCH INTO SOUND AS MATERIALITY.</p><p>THE FIVE SOUNDS IS COMPOSED FOR THE VIDEO IMPACT ON ENVIRONMENTAL DEATH CAUSED BY THE SLOW, CONTINUOUS SPREAD OF CHEMICAL CONTAMINANTS IN SOIL.</p><p>ALL SOUNDS BY KIRSTEN PALZ WITH SAMPLES BY HONOKA UCHIITO.</p><p>WITH AN EDUCATIONAL TRAINING IN YOUTH OF READING AND WRITING CLASSICAL SCORE MUSIC, I BEGAN EXPLORING SOUND IN 2020 THROUGH COMPUTER-GENERATED AUDIO, DIGITAL SOUND ENGINEERING (DAW), AND LIVE FIELD RECORDINGS. SINCE THEN, I HAVE USED SOUND AS AN ENVIRONMENTAL LAYER WITHIN SEVERAL EXHIBITIONS.</p><p><strong>PSYCHOTROPIC SCULPTURE 2016</strong></p><p>PERFORMANCE IN TOKYO WONDER SITE, JAPAN. IT WAS CONCEIVED SPECIFICALLY FOR THE RESIDENCY BUILDING’S FLOOR PLAN. THE PIECE GREW OUT OF AN IMAGINATIVE INTERPRETATION OF THE SITE, DEVELOPED BY STUDYING ITS ARCHITECTURAL DRAWINGS. IT WAS CREATED ON THE INVITATION OF CURATOR ISABEL DE SENA, WHO WAS IN TOKYO FOR A RESEARCH TRIP ON THE JAPANESE GROUP GUTAI.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/psychotropic-sculpture&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 13 BERLIN (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE STREETS OF BERLIN.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-13&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 5 BERLIN (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE SUBWAY SYSTEM OF BERLIN.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-5&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe><p><strong>OPUS 12 NYC (2020)</strong></p><p>THE SOUND IS BASED ON DESTORTED FIELD RECORDING FROM THE STREETS OF NYC.</p><iframe width="100%" height="166" scrolling="no" frameborder="no" allow="autoplay" src="https://w.soundcloud.com/player/?url=https%3A//soundcloud.com/user-538461993/opus-12&color=%23000000&auto_play=false&hide_related=true&show_comments=false&show_user=false&show_reposts=false&show_teaser=false" style="margin-bottom: 20px;"></iframe>',
         images: ["image2.png", "image3.png", "image4.png", "image5.png"]
     },
     'works': {
@@ -118,7 +117,6 @@ const projectData = {
 <p>SINCE 2021, MUCH OF MY RESEARCH HAS DRAWN DIRECTLY ON CHANGES IN THE ENVIRONMENT. I BEGIN WITH WHAT I WITNESS MYSELF. I OBSERVE THE WORLD ATTENTIVELY TO CAPTURE EVEN SMALL SHIFTS IN MY DIRECT SURROUNDINGS: LAKES NO LONGER SAFE FOR SWIMMING, SOIL CONTAMINATED WITH TOXINS, SKIES DARKENED BY COAL EMISSIONS, THE DISAPPEARANCE OF INSECTS.</p>
 <p>FURTHERMORE, I STUDY SCIENTIFIC REPORTS AND WHITE PAPERS, DOWNLOADING AND EXAMINING DOCUMENTATION OF ENVIRONMENTAL DAMAGE.</p>
 <p>I SEE IT AS MY OBLIGATION TOWARD FUTURE GENERATIONS TO RECORD HUMANITY’S ONGOING DESTRUCTION OF EARTH’S ECOSYSTEMS, TO MAKE IT VISIBLE TO A BROADER PUBLIC, AND TO PLACE IT IN ARCHIVES. I VIEW MY WORKS AS ARTISTIC TRANSLATIONS OF PAINFUL DATA, PAINFUL LOSS, AND PAINFUL BEHAVIORAL PATTERNS.</p>
-<br>
 <p>THE INVENTORY IS ASSEMBLED INTO ARCHIVES AND SPANS TEXTS, PRINTS, PERFORMANCES, INSTALLATIONS, VIDEO WORKS, SOUND PIECES, AND LAND ART.</p>
 `,
         images: []
@@ -209,7 +207,7 @@ const projectData = {
 
     'now': {
         title: '// NOW',
-        description: '<p><strong>// NOW</strong></p><p>APPLICATION: SEPTEMBER SENATE 2025</p><p>WORKING PROJECT: CONTAMINANTS OF EMERGING CONCERN (CEC)</p><br><p>TWO EXTENSIVE ARCHIVES FORM THE CORE OF MY WORK: SCULPTURE AS WRITING (SINCE 2004) – A BODY OF AROUND 500 MANUALS CONNECTING LANGUAGE, SPACE, IMAGINATION, AND DATA – AND CHRONICLE OF EXTINCTION (SINCE 2021), WHICH IS DEDICATED TO THE ARTISTIC PROCESSING OF CLIMATE AND ENVIRONMENTAL SCIENCE DATABASES. I INTEND TO EXPAND THE WORKS FROM CHRONICLE OF EXTINCTION WITH A NEW SERIES OF VISUAL WORKS: CONTAMINANTS OF EMERGING CONCERN (CEC).</p><br><p>THIS PROJECT PROVIDES A DEEP AND PAINFUL INSIGHT INTO THE IDENTIFICATION, DISTRIBUTION, ENVIRONMENTAL BEHAVIOR, AND POTENTIAL HEALTH CONSEQUENCES OF SO-CALLED CECS.</p><br><p>THE FINAL VISUAL FORMAT OF CEC (2025–2026) IS NOT YET DETERMINED, BUT WILL BUILD UPON MY RECENT WORK, WHICH OPERATED WITH PROJECTION, AI IMAGE GENERATION, SOUND, AND PROGRAMMED DATABASE SYSTEMS. THE PRESENTATION IS PLANNED FOR THE PUBLIC SPACE OF BERLIN – FOR EXAMPLE AS PROJECTIONS ON BUILDING FACADES. THUS, THE WORK VIEWS ITSELF AS AN ARTISTIC AND ACTIVIST CONTRIBUTION BEYOND THE WHITE CUBE. ACCOMPANYING THE VIDEO, A SERIES OF POSTER MOTIFS WILL BE CREATED, ADOPTING THE AESTHETICS OF A CAMPAIGN.</p><br><p>CONTAMINANTS OF EMERGING CONCERN (CEC) IS AT THE SAME TIME A CONTINUATION OF IMPACT (2023–2025) CONCERNING PESTICIDES.</p>',
+        description: '<p><strong>// NOW</strong></p><p>APPLICATION: SEPTEMBER SENATE 2025</p><p>WORKING PROJECT: CONTAMINANTS OF EMERGING CONCERN (CEC)</p><p>TWO EXTENSIVE ARCHIVES FORM THE CORE OF MY WORK: SCULPTURE AS WRITING (SINCE 2004) – A BODY OF AROUND 500 MANUALS CONNECTING LANGUAGE, SPACE, IMAGINATION, AND DATA – AND CHRONICLE OF EXTINCTION (SINCE 2021), WHICH IS DEDICATED TO THE ARTISTIC PROCESSING OF CLIMATE AND ENVIRONMENTAL SCIENCE DATABASES. I INTEND TO EXPAND THE WORKS FROM CHRONICLE OF EXTINCTION WITH A NEW SERIES OF VISUAL WORKS: CONTAMINANTS OF EMERGING CONCERN (CEC).</p><p>THIS PROJECT PROVIDES A DEEP AND PAINFUL INSIGHT INTO THE IDENTIFICATION, DISTRIBUTION, ENVIRONMENTAL BEHAVIOR, AND POTENTIAL HEALTH CONSEQUENCES OF SO-CALLED CECS.</p><p>THE FINAL VISUAL FORMAT OF CEC (2025–2026) IS NOT YET DETERMINED, BUT WILL BUILD UPON MY RECENT WORK, WHICH OPERATED WITH PROJECTION, AI IMAGE GENERATION, SOUND, AND PROGRAMMED DATABASE SYSTEMS. THE PRESENTATION IS PLANNED FOR THE PUBLIC SPACE OF BERLIN – FOR EXAMPLE AS PROJECTIONS ON BUILDING FACADES. THUS, THE WORK VIEWS ITSELF AS AN ARTISTIC AND ACTIVIST CONTRIBUTION BEYOND THE WHITE CUBE. ACCOMPANYING THE VIDEO, A SERIES OF POSTER MOTIFS WILL BE CREATED, ADOPTING THE AESTHETICS OF A CAMPAIGN.</p><p>CONTAMINANTS OF EMERGING CONCERN (CEC) IS AT THE SAME TIME A CONTINUATION OF IMPACT (2023–2025) CONCERNING PESTICIDES.</p>',
         images: []
     },
     'le-foyer': {
@@ -254,7 +252,6 @@ const projectData = {
         description: `
 <p><strong>ACTA</strong></p>
 <p>ACTA is an art collective founded in 2016 by Tatiana Echeverri Fernandez and Kirsten Palz.</p>
-<br>
 <p><strong>EXHIBITIONS, ACTIVITIES AND PERFORMANCES BY ACTA</strong></p>
 <p><strong>2021</strong><br>FREUNDE OHNE BÜCHER<br>eine Initiative von FreundInnen und KünstlerInnen.<br>HAUNT frontviews, Berlin</p>
 <p><strong>2020</strong><br>- Z1<br>The width of variation of the possible shapes of an object, a pattern or the like. Video-screening.<br>Schoeler Kunsthaus, Berlin.</p>
@@ -269,12 +266,10 @@ const projectData = {
 <p>- Form and Seconds<br>ACTA SCREEN. Curatorial Video-programm mit Bettina Buck, Beatriz Olabarrieta, Laure Prouvost.<br>Grimmuseum, Berlin</p>
 <p>- Letter Henry Moore.<br>ACTA PROPOSAL.</p>
 <p>- Material Art Fair<br>Invited by Beatriz Olabarrieta.<br>Mexico City, Mexico.</p>
-<br>
 <p><strong>PUBLICATIONS</strong></p>
 <p><strong>2020</strong><br>- SET // ALGORITHM.<br>A plawright. Online Publikation.</p>
 <p><strong>2019</strong><br>- Travel to space and back.<br>Unikat. Eigenverlag ACTA PRINT</p>
 <p>- Bettina von Armin<br>Unikat. Eigenverlag ACTA PRINT</p>
-<br>
 <p><strong>ACTA Formats and Definitions:</strong></p>
 <p>ACTA operates in different formats:</p>
 <p><strong>ACTA ACTS</strong><br>refers to a series of exhibitions, happenings and actions in institutional and public space.</p>
@@ -295,6 +290,42 @@ const projectData = {
 };
 
 document.addEventListener('DOMContentLoaded', () => {
+    // Progressive enhancement flag: unlocks the `html.js [data-reveal]` rules
+    // in style.css. Without JS the content stays visible (no-JS fallback).
+    document.documentElement.classList.add('js');
+
+    // ── Round 2 (KON-295): motion behaviour ────────────────────────────────
+    // The CSS reduced-motion block neutralises CSS animation/transition with
+    // `!important`, but it canNOT touch JS-driven motion (Web Animations API,
+    // smooth scroll). So every JS micro-interaction below is gated on this
+    // live flag instead. Tracks the OS setting in real time.
+    const reduceMotionMQ = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let prefersReducedMotion = reduceMotionMQ.matches;
+    reduceMotionMQ.addEventListener('change', (e) => { prefersReducedMotion = e.matches; });
+
+    // Scroll-reveal observer: fades each tagged element in once, when ~12%
+    // visible. prefers-reduced-motion is handled in CSS (it neutralises the
+    // reveal transform/opacity), so no JS branch is needed here.
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target); // fire once per element
+            }
+        });
+    }, { threshold: 0.12 });
+
+    // Tag elements with data-reveal and observe them. Safe to call on
+    // re-render: clears any prior is-visible so the reveal can replay.
+    const observeReveal = (elements) => {
+        elements.forEach((el) => {
+            if (!el) return;
+            el.classList.remove('is-visible');
+            el.setAttribute('data-reveal', '');
+            revealObserver.observe(el);
+        });
+    };
+
     const navLinks = document.querySelectorAll('.nav-link');
     const sections = document.querySelectorAll('.content-section');
 
@@ -325,6 +356,101 @@ document.addEventListener('DOMContentLoaded', () => {
     const detailDescription = document.getElementById('detail-description');
     const detailImages = document.getElementById('detail-images');
 
+    // ── Round 2 motion helpers (all reduced-motion safe) ───────────────────
+
+    // Smooth scroll the content column back to the top on every route change,
+    // replacing the previous instant `mainContent.scrollTop = 0` jumps. Falls
+    // back to an instant jump when reduced motion is requested.
+    const scrollContentTop = () => {
+        if (mainContent) {
+            mainContent.scrollTo({ top: 0, behavior: prefersReducedMotion ? 'auto' : 'smooth' });
+        }
+        // KON-305 mobile route-change safety: some mobile browsers scroll the
+        // window (URL-bar collapse) instead of .main-content, so reset both so
+        // a new view always lands at the top. Instant jump = reduced-motion safe.
+        window.scrollTo(0, 0);
+    };
+
+    // Choreographed section-enter via the Web Animations API. The CSS `riseIn`
+    // keyframes only fire the FIRST time a section matches `.active`; on
+    // re-navigation they stay silent. This replays a short fade+rise on every
+    // switch so routing always feels alive. Composes cleanly with the CSS
+    // child stagger on a section's first view (parent fades, children rise).
+    const animateSectionIn = (section) => {
+        if (!section || prefersReducedMotion || typeof section.animate !== 'function') return;
+        section.animate(
+            [
+                { opacity: 0, transform: 'translateY(10px)' },
+                { opacity: 1, transform: 'none' }
+            ],
+            { duration: 420, easing: 'cubic-bezier(0.22, 1, 0.36, 1)', fill: 'backwards' }
+        );
+    };
+
+    // Hover/focus intent prefetch: warm the browser cache with a project's
+    // images the moment a visitor signals interest, so the detail view paints
+    // instantly on click. Pure network warming — no DOM/motion side effects.
+    const prefetchedProjects = new Set();
+    const prefetchProjectImages = (projectId) => {
+        const data = projectData[projectId];
+        if (!data || !Array.isArray(data.images) || prefetchedProjects.has(projectId)) return;
+        prefetchedProjects.add(projectId);
+        data.images.forEach((item) => {
+            const src = typeof item === 'string' ? item : (item && item.src);
+            if (src) { const img = new Image(); img.src = src; }
+        });
+    };
+
+    // ── KON-305 mobile nav-drawer behaviour ────────────────────────────────
+    // One source of truth for opening/closing the mobile sidebar. The
+    // hamburger, nav links, the outside-tap backdrop and the Escape key all
+    // route through setSidebarOpen() so the .open class, toggle label,
+    // aria-expanded, body scroll-lock (mobile only) and the injected
+    // .sidebar-backdrop element never drift out of sync. UXDesigner owns the
+    // .sidebar-backdrop visuals in style.css; this lane owns the DOM + events.
+    const MOBILE_BP = 768;
+    let sidebarBackdrop = null;
+
+    const closeSidebar = () => setSidebarOpen(false);
+
+    const removeBackdrop = () => {
+        if (sidebarBackdrop) { sidebarBackdrop.remove(); sidebarBackdrop = null; }
+    };
+
+    const addBackdrop = () => {
+        if (sidebarBackdrop) return;
+        sidebarBackdrop = document.createElement('div');
+        sidebarBackdrop.className = 'sidebar-backdrop';
+        // Functional fallback only when UXDesigner's CSS hasn't landed yet: if a
+        // stylesheet already positions .sidebar-backdrop we defer all visuals to
+        // it; otherwise we apply the minimum needed to make outside-tap work.
+        if (getComputedStyle(sidebarBackdrop).position === 'static') {
+            Object.assign(sidebarBackdrop.style, {
+                position: 'fixed', inset: '0', zIndex: '9',
+                background: 'rgba(0,0,0,0.32)', cursor: 'pointer'
+            });
+        }
+        sidebarBackdrop.addEventListener('click', closeSidebar);
+        document.body.appendChild(sidebarBackdrop);
+    };
+
+    const setSidebarOpen = (open) => {
+        if (!sidebar) return;
+        sidebar.classList.toggle('open', open);
+        if (menuToggle) {
+            menuToggle.textContent = open ? 'CLOSE' : 'MENU';
+            menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+        }
+        // Lock background scroll while the drawer is open on mobile; restoring to
+        // an empty string hands control back to the stylesheet default.
+        if (window.innerWidth <= MOBILE_BP) {
+            document.body.style.overflow = open ? 'hidden' : '';
+        } else if (!open) {
+            document.body.style.overflow = '';
+        }
+        if (open) addBackdrop(); else removeBackdrop();
+    };
+
     navLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -333,37 +459,61 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = link.getAttribute('data-target');
             sections.forEach(sec => sec.classList.remove('active'));
             const targetSec = document.getElementById(targetId);
-            if (targetSec) targetSec.classList.add('active');
-            if (window.innerWidth <= 768) sidebar.classList.remove('open');
-            mainContent.scrollTop = 0;
+            if (targetSec) {
+                targetSec.classList.add('active');
+                animateSectionIn(targetSec);
+            }
+            if (window.innerWidth <= MOBILE_BP) closeSidebar();
+            scrollContentTop();
         });
     });
 
     if (menuToggle) {
+        menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.addEventListener('click', () => {
-            sidebar.classList.toggle('open');
-            menuToggle.textContent = sidebar.classList.contains('open') ? 'CLOSE' : 'MENU';
+            setSidebarOpen(!sidebar.classList.contains('open'));
         });
     }
 
     projectLinks.forEach(link => {
+        // Warm image cache on hover/focus intent before the click lands.
+        const hoverId = link.getAttribute('data-project-id');
+        if (hoverId) {
+            link.addEventListener('mouseenter', () => prefetchProjectImages(hoverId));
+            link.addEventListener('focus', () => prefetchProjectImages(hoverId));
+        }
                 link.addEventListener('click', (e) => {
             e.preventDefault();
             const projectId = link.getAttribute('data-project-id');
             const data = projectData[projectId];
 
+            // Active-state sync (recognition over recall): clear nav highlight,
+            // then re-set it only if the clicked link lives in the sidebar so
+            // the nav reflects the open view. Brutalist-list links (main
+            // content) intentionally leave the nav with no active item.
+            navLinks.forEach(l => l.classList.remove('active'));
+            if (link.closest('.sidebar')) {
+                link.classList.add('active');
+            }
+
             if (data) {
-                // Set the header title to the category instead of the project title to avoid doubling
+                // Masthead shows the opened work's own name (Round 2 poster
+                // masthead — each detail view reads as a titled work, not a
+                // generic category). The body description still opens with the
+                // full dated citation line `TITLE (YEAR)`, so the masthead is
+                // the clean work name and the body is the citation — hierarchy,
+                // not doubling. Falls back to the section category if a
+                // projectData entry ever lacks a title.
                 const engagementProjects = ['le-foyer', 'art-feminism', 'book-fairs', 'acta', 'thanks'];
-                const topLevelProjects = ['sculpture', 'absences', 'ai-research'];
-                
+                let fallbackTitle;
                 if (engagementProjects.includes(projectId)) {
-                    detailTitle.textContent = 'ENGAGEMENT';
+                    fallbackTitle = 'ENGAGEMENT';
                 } else if (projectId === 'about' || projectId === 'now' || projectId === 'cv') {
-                    detailTitle.textContent = 'KIRSTEN PALZ';
+                    fallbackTitle = 'KIRSTEN PALZ';
                 } else {
-                    detailTitle.textContent = 'PROJECTS';
+                    fallbackTitle = 'PROJECTS';
                 }
+                detailTitle.textContent = data.title || fallbackTitle;
 
                 detailDescription.innerHTML = data.description;
                 detailImages.innerHTML = '';
@@ -388,7 +538,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
                 sections.forEach(sec => sec.classList.remove('active'));
                 document.getElementById('project-detail').classList.add('active');
-                mainContent.scrollTop = 0;
+                scrollContentTop();
+
+                // Scroll reveal: tag the description block plus every image-box
+                // (both those embedded in the description markup and those
+                // injected into the grid above) and observe them.
+                observeReveal([detailDescription, ...document.querySelectorAll('#project-detail .image-box')]);
             }
         });
     });
@@ -396,10 +551,29 @@ document.addEventListener('DOMContentLoaded', () => {
     if (backBtn) {
         backBtn.addEventListener('click', () => {
             sections.forEach(sec => sec.classList.remove('active'));
-            document.getElementById('home').classList.add('active');
+            const home = document.getElementById('home');
+            home.classList.add('active');
+            animateSectionIn(home);
             navLinks.forEach(l => l.classList.remove('active'));
             document.querySelector('.nav-link[data-target="home"]').classList.add('active');
-            mainContent.scrollTop = 0;
+            scrollContentTop();
         });
     }
+
+    // Escape returns from a project detail to the directory — reuses the back
+    // button's routine so nav state + scroll stay consistent. Brutalist,
+    // keyboard-first micro-interaction; no-op anywhere else.
+    document.addEventListener('keydown', (e) => {
+        if (e.key !== 'Escape') return;
+        // KON-305: the open mobile drawer takes priority — Escape closes it
+        // first and stops, so it doesn't also pop the project detail underneath.
+        if (sidebar && sidebar.classList.contains('open')) {
+            closeSidebar();
+            return;
+        }
+        const detail = document.getElementById('project-detail');
+        if (backBtn && detail && detail.classList.contains('active')) {
+            backBtn.click();
+        }
+    });
 });

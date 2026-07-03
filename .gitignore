@@ -1,0 +1,23 @@
+# === Nur die Website gehört ins Repo — alles andere ausschließen ===
+
+# Fremd-Projekt: n8n Mail-Automatisierung (enthält E-Mail-Adressen — NICHT veröffentlichen!)
+workflow*.json
+
+# Build-/Scrape-Einmalwerkzeuge (gehören nicht zur ausgelieferten Seite)
+*.py
+__pycache__/
+scrape_results.json
+extract_log.txt
+*.log
+
+# Interne Build-/Test-Artefakte
+check_*.js
+DESIGN_NOTES.md
+
+# Quell-/Konzeptmaterial
+*.docx
+
+# System / Editor
+.DS_Store
+.antigravity/
+*.tmp
