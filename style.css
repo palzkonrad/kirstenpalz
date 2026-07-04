@@ -1027,30 +1027,12 @@ html.js [data-reveal].is-visible {
         opacity: 1;
         transform: none;
     }
+
+    /* The editorial hover zoom is motion too — killing the transition alone
+       would leave an abrupt scale jump, so neutralise the transform itself
+       in both states (rest + hover). */
+    .image-frame img,
+    .image-box:hover .image-frame img {
+        transform: none;
+    }
 }
-
-/* ============================================================
-   ENGINEER HANDOFF — Founding Engineer (script.js / index.html)
-   ------------------------------------------------------------
-   The visual layer above is complete and works with the current
-   DOM untouched. Two optional progressive enhancements unlock
-   the full effect, neither changes projectData or routing:
-
-   1) SCROLL REVEAL (used by `[data-reveal]` rules above)
-      - On load: document.documentElement.classList.add('js')
-      - After injecting project detail markup, add the attribute
-        data-reveal to each <figure class="image-box"> (and the
-        .brutalist-post), then observe them with an
-        IntersectionObserver that adds class 'is-visible' at
-        ~12% visibility (threshold 0.12, once).
-      - Fallback is built in: no JS => content stays visible.
-
-   2) ACTIVE-STATE SYNC (recognition over recall)
-      - When a sidebar .project-link is clicked, clear .active on
-        all .nav-link and set it on the clicked link if it lives
-        in the sidebar, so the nav reflects the open view.
-
-   Acceptance: reveal fires once per element, respects
-   prefers-reduced-motion (CSS already neutralises it), no layout
-   shift, routing/back-button unchanged.
-   ============================================================ */

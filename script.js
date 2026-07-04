@@ -266,7 +266,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     const openProject = (projectId) => {
         const data = contentState.byId[projectId];
-        if (!data) return;
+        if (!data) {
+            // Registry miss (id routes, but no content entry exists — e.g. a
+            // JSON file was removed): behave exactly like an unknown route
+            // instead of leaving the previous view under a wrong URL.
+            recoverToHome();
+            return;
+        }
 
         // Masthead shows the opened work's own name (Round 2 poster
         // masthead — each detail view reads as a titled work, not a
@@ -468,15 +474,17 @@ document.addEventListener('DOMContentLoaded', async () => {
         setDocumentTitle(route.view === 'engagement' ? 'Engagement' : null);
     };
 
+    // Unknown route/id: show home and quietly repair the URL without adding
+    // a history entry or re-firing hashchange. Shared by navigate() (route
+    // doesn't parse) and openProject() (route parses, but no registry entry).
+    const recoverToHome = () => {
+        history.replaceState(null, '', '#/');
+        renderRoute({ view: 'home' });
+    };
+
     const navigate = () => {
-        let route = parseRoute(location.hash);
-        if (!route) {
-            // Unknown route: show home and quietly repair the URL without
-            // adding a history entry or re-firing hashchange.
-            history.replaceState(null, '', '#/');
-            route = { view: 'home' };
-        }
-        renderRoute(route);
+        const route = parseRoute(location.hash);
+        if (route) renderRoute(route); else recoverToHome();
     };
 
     // Back-btn / Escape prefer real browser history so back-forward stays
