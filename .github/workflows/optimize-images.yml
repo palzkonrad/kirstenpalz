@@ -1,0 +1,92 @@
+# AP7 — Auto-Optimierung für CMS-Bild-Uploads.
+#
+# Pages CMS committet Bild-Uploads direkt nach images/ auf main — potenziell
+# 8-MB-Handyfotos. Dieser Workflow verkleinert/rekomprimiert NUR zu große
+# Bilder (tools/optimize-uploads.mjs, Regeln dort dokumentiert) und committet
+# das Ergebnis zurück. Bewusst KEINE Fremd-Action (calibreapp o. ä.): die sind
+# PR-orientiert und ziehen Docker — das eigene sharp-Skript bleibt konsistent
+# zur Bestands-Optimierung aus AP1.
+#
+# SCHLEIFENSCHUTZ (dreifach, von hart nach weich):
+#  0. Der Push des Bot-Commits erfolgt mit dem Standard-GITHUB_TOKEN — solche
+#     Pushes lösen auf GitHub grundsätzlich KEINE weiteren push-Workflows aus.
+#     (Kehrseite: auch static.yml startet nicht von selbst → das Deploy wird
+#     unten explizit per workflow_dispatch angestoßen.)
+#  1. Committet wird nur bei echten Änderungen (git diff --cached --quiet).
+#     Das Skript lässt konforme Bilder byte-identisch → ein zweiter Lauf über
+#     bereits optimierte Bilder erzeugt keinen dritten Commit.
+#  2. Gürtel + Hosenträger, falls je auf einen PAT umgestellt wird (dessen
+#     Pushes WÜRDEN Workflows triggern): Bot-Commits tragen den Marker
+#     [skip-optimize] in der Message, und die if-Bedingung unten überspringt
+#     Läufe, die von github-actions[bot] stammen oder den Marker tragen.
+
+name: Optimize CMS image uploads
+
+on:
+  push:
+    branches: ["main"]
+    paths: ["images/**"]
+  # Manueller Lauf aus dem Actions-Tab (z. B. für den Live-Test in AP8)
+  workflow_dispatch:
+
+# Minimal: contents zum Zurück-Committen, actions um static.yml anzustoßen
+permissions:
+  contents: write
+  actions: write
+
+# Keine parallelen Läufe (z. B. wenn das CMS mehrere Bilder kurz nacheinander
+# hochlädt) — Folgeläufe warten, statt sich gegenseitig die Pushes zu zerlegen.
+concurrency:
+  group: optimize-images
+  cancel-in-progress: false
+
+jobs:
+  optimize:
+    # Schleifenschutz 2 (s. o.): eigene Bot-Commits gar nicht erst verarbeiten
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip-optimize]')
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies (sharp)
+        run: npm ci
+
+      - name: Optimize oversized images
+        run: node tools/optimize-uploads.mjs
+
+      - name: Commit changes (nur bei echten Änderungen)
+        id: commit
+        run: |
+          git add -A images content
+          # Schleifenschutz 1: kein Commit, wenn das Skript nichts geändert hat
+          if git diff --cached --quiet; then
+            echo "Keine Änderungen — kein Commit."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Auto: Bilder weboptimiert [skip-optimize]"
+          # Falls zwischenzeitlich jemand gepusht hat (z. B. CMS-Speichern
+          # direkt nach dem Upload): sauber davorsetzen statt Push-Fehler.
+          git pull --rebase origin main
+          git push origin main
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Der Original-Push (Upload der Künstlerin) hat static.yml bereits
+      # deployt — allerdings mit dem unoptimierten Bild. Da der Bot-Push mit
+      # GITHUB_TOKEN keinen push-Trigger auslöst (Schleifenschutz 0), stoßen
+      # wir das Deploy hier explizit an. Der zusätzliche Deploy ist unschädlich:
+      # static.yml lädt einfach den aktuellen Stand von main erneut hoch.
+      - name: Trigger Pages deploy für optimierte Bilder
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run static.yml --ref main

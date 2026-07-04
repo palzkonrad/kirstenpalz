@@ -3,7 +3,8 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "optimize-images": "node tools/optimize-images.mjs"
+    "optimize-images": "node tools/optimize-images.mjs",
+    "optimize-uploads": "node tools/optimize-uploads.mjs"
   },
   "devDependencies": {
     "@fontsource-variable/archivo": "^5.2.8",
