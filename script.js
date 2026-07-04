@@ -6,6 +6,11 @@
 // Paths are RELATIVE ("content/…", "images/…") because the site is served
 // from a sub-path (/kirstenpalz/) in production.
 
+// ── PAGE REGISTRY ────────────────────────────────────────────────────────────
+// Every id listed here is (a) fetched from content/pages/<id>.json and
+// (b) automatically routable as "#/<id>" — no router changes needed.
+// To add a page (e.g. AP5: impressum, datenschutz): drop the JSON file into
+// content/pages/ and append its id to this list. That's all.
 const PAGE_IDS = ['about', 'now', 'cv', 'thanks', 'sculpture', 'absences', 'ai-research'];
 
 const contentState = {
@@ -36,6 +41,17 @@ const loadContent = async () => {
 const escapeHtml = (value) => String(value).replace(/[&<>"]/g, (ch) => (
     { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[ch]
 ));
+
+// AP3: document.title per route. Home is the bare site name; every other
+// route appends it to the content's own title. Content titles are stored in
+// their original mixed case (uppercase on screen is CSS-only), and the title
+// bar keeps that original casing. The about page is titled "Kirsten Palz",
+// which would double the site name — collapse that case to the bare name.
+const setDocumentTitle = (title) => {
+    document.title = (title && title.toUpperCase() !== 'KIRSTEN PALZ')
+        ? `${title} — KIRSTEN PALZ`
+        : 'KIRSTEN PALZ';
+};
 
 document.addEventListener('DOMContentLoaded', async () => {
     // Progressive enhancement flag: unlocks the `html.js [data-reveal]` rules
@@ -156,11 +172,13 @@ document.addEventListener('DOMContentLoaded', async () => {
 
     // Renders a brutalist directory list from an ordered content array,
     // matching the markup the hardcoded lists used (style.css stays as-is).
+    // AP3: entries carry real "#/p/<id>" hrefs so middle-click / copy-link /
+    // open-in-new-tab work; navigation itself runs through the hash router.
     const renderDirectoryList = (containerId, entries) => {
         const container = document.getElementById(containerId);
         if (!container) return;
         container.innerHTML = entries.map((entry) => (
-            `<a href="#" class="brutalist-item project-link" data-project-id="${escapeHtml(entry.id)}">` +
+            `<a href="#/p/${escapeHtml(entry.id)}" class="brutalist-item">` +
             `<span>${escapeHtml(entry.title)}</span><span class="arrow">+</span></a>`
         )).join('');
     };
@@ -208,18 +226,9 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     };
 
-    const openProject = (projectId, link) => {
+    const openProject = (projectId) => {
         const data = contentState.byId[projectId];
         if (!data) return;
-
-        // Active-state sync (recognition over recall): clear nav highlight,
-        // then re-set it only if the clicked link lives in the sidebar so
-        // the nav reflects the open view. Brutalist-list links (main
-        // content) intentionally leave the nav with no active item.
-        navLinks.forEach(l => l.classList.remove('active'));
-        if (link && link.closest('.sidebar')) {
-            link.classList.add('active');
-        }
 
         // Masthead shows the opened work's own name (Round 2 poster
         // masthead — each detail view reads as a titled work, not a
@@ -238,6 +247,7 @@ document.addEventListener('DOMContentLoaded', async () => {
             fallbackTitle = 'PROJECTS';
         }
         detailTitle.textContent = data.title || fallbackTitle;
+        setDocumentTitle(data.title || fallbackTitle);
 
         detailDescription.innerHTML = data.description || '';
         decorateExternalLinks(detailDescription);
@@ -341,26 +351,6 @@ document.addEventListener('DOMContentLoaded', async () => {
         if (open) addBackdrop(); else removeBackdrop();
     };
 
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Sidebar project links (data-project-id) are handled by the
-            // delegated project-link handler below.
-            const targetId = link.getAttribute('data-target');
-            if (!targetId) return;
-            e.preventDefault();
-            navLinks.forEach(l => l.classList.remove('active'));
-            link.classList.add('active');
-            sections.forEach(sec => sec.classList.remove('active'));
-            const targetSec = document.getElementById(targetId);
-            if (targetSec) {
-                targetSec.classList.add('active');
-                animateSectionIn(targetSec);
-            }
-            if (window.innerWidth <= MOBILE_BP) closeSidebar();
-            scrollContentTop();
-        });
-    });
-
     if (menuToggle) {
         menuToggle.setAttribute('aria-expanded', 'false');
         menuToggle.addEventListener('click', () => {
@@ -368,33 +358,110 @@ document.addEventListener('DOMContentLoaded', async () => {
         });
     }
 
-    // AP2: one delegated listener covers both the static sidebar project
-    // links and the dynamically rendered directory lists — no per-link
-    // listeners to (re)attach after a render.
-    document.addEventListener('click', (e) => {
-        const link = e.target.closest('.project-link');
-        if (!link) return;
-        e.preventDefault();
-        const projectId = link.getAttribute('data-project-id');
-        if (!projectId) return;
-        openProject(projectId, link);
-        if (window.innerWidth <= MOBILE_BP && link.closest('.sidebar')) closeSidebar();
+    // ── AP3: hash router ────────────────────────────────────────────────────
+    // Route table (the "#/" prefix keeps native in-page anchors usable):
+    //   #/ or empty   → home (PROJECTS directory)
+    //   #/engagement  → ENGAGEMENT directory
+    //   #/p/<id>      → detail view of a project or engagement entry (byId)
+    //   #/<page-id>   → standalone page; every id in PAGE_IDS routes
+    //                   automatically (see the PAGE REGISTRY at the top)
+    //   anything else → home, URL silently corrected to #/ (replaceState)
+    // All links carry real hrefs; clicks just change location.hash and the
+    // hashchange listener renders — so deep links, reload and the browser's
+    // back/forward buttons all resolve through the same navigate() path.
+
+    const parseRoute = (rawHash) => {
+        let hash;
+        try {
+            hash = decodeURIComponent(rawHash || '');
+        } catch (error) {
+            return null; // malformed percent-encoding → treat as unknown route
+        }
+        if (hash === '' || hash === '#' || hash === '#/') return { view: 'home' };
+        if (!hash.startsWith('#/')) return null;
+        const path = hash.slice(2);
+        if (path === 'engagement') return { view: 'engagement' };
+        const detail = path.match(/^p\/([\w-]+)$/);
+        if (detail && contentState.byId[detail[1]]) return { view: 'detail', id: detail[1] };
+        if (PAGE_IDS.includes(path)) return { view: 'detail', id: path };
+        return null;
+    };
+
+    // Canonical hash per route — used to highlight the matching sidebar link.
+    // Directory-list entries (#/p/<id>) have no sidebar counterpart, so the
+    // nav intentionally shows no active item there (same as before AP3).
+    const routeHash = (route) => {
+        if (route.view === 'engagement') return '#/engagement';
+        if (route.view === 'detail') {
+            return PAGE_IDS.includes(route.id) ? `#/${route.id}` : `#/p/${route.id}`;
+        }
+        return '#/';
+    };
+
+    const renderRoute = (route) => {
+        // Any navigation closes the mobile drawer so the new view is visible.
+        if (window.innerWidth <= MOBILE_BP) closeSidebar();
+        const hash = routeHash(route);
+        navLinks.forEach((l) => l.classList.toggle('active', l.getAttribute('href') === hash));
+
+        if (route.view === 'detail') {
+            openProject(route.id); // sets document.title from the content
+            return;
+        }
+        const target = document.getElementById(route.view === 'engagement' ? 'engagement' : 'home');
+        sections.forEach(sec => sec.classList.remove('active'));
+        target.classList.add('active');
+        animateSectionIn(target);
+        scrollContentTop();
+        setDocumentTitle(route.view === 'engagement' ? 'Engagement' : null);
+    };
+
+    const navigate = () => {
+        let route = parseRoute(location.hash);
+        if (!route) {
+            // Unknown route: show home and quietly repair the URL without
+            // adding a history entry or re-firing hashchange.
+            history.replaceState(null, '', '#/');
+            route = { view: 'home' };
+        }
+        renderRoute(route);
+    };
+
+    // Back-btn / Escape prefer real browser history so back-forward stays
+    // symmetrical — but only when the visitor has navigated inside the app.
+    // On a cold deep link there is no in-app entry behind us, so we go to the
+    // route's parent instead (engagement entry → #/engagement, else → #/).
+    let internalNavCount = 0;
+    const parentHash = (route) => (
+        route && route.view === 'detail' && contentState.engagement.some((e) => e.id === route.id)
+            ? '#/engagement'
+            : '#/'
+    );
+    const goBack = () => {
+        if (internalNavCount > 0) {
+            history.back();
+            return;
+        }
+        location.hash = parentHash(parseRoute(location.hash));
+    };
+
+    window.addEventListener('hashchange', () => {
+        internalNavCount += 1;
+        navigate();
     });
 
-    if (backBtn) {
-        backBtn.addEventListener('click', () => {
-            sections.forEach(sec => sec.classList.remove('active'));
-            const home = document.getElementById('home');
-            home.classList.add('active');
-            animateSectionIn(home);
-            navLinks.forEach(l => l.classList.remove('active'));
-            document.querySelector('.nav-link[data-target="home"]').classList.add('active');
-            scrollContentTop();
-        });
-    }
+    // Same-hash clicks (e.g. tapping PROJECTS while on home) don't fire
+    // hashchange — re-render manually so scroll-to-top/animation still replay
+    // and the mobile drawer still closes.
+    document.addEventListener('click', (e) => {
+        const link = e.target.closest('a[href^="#/"]');
+        if (!link) return;
+        if (link.getAttribute('href') === location.hash) navigate();
+    });
 
-    // Escape returns from a project detail to the directory — reuses the back
-    // button's routine so nav state + scroll stay consistent. Brutalist,
+    if (backBtn) backBtn.addEventListener('click', goBack);
+
+    // Escape returns from a project detail to the directory. Brutalist,
     // keyboard-first micro-interaction; no-op anywhere else.
     document.addEventListener('keydown', (e) => {
         if (e.key !== 'Escape') return;
@@ -405,8 +472,10 @@ document.addEventListener('DOMContentLoaded', async () => {
             return;
         }
         const detail = document.getElementById('project-detail');
-        if (backBtn && detail && detail.classList.contains('active')) {
-            backBtn.click();
-        }
+        if (detail && detail.classList.contains('active')) goBack();
     });
+
+    // Initial load resolves whatever hash the visitor arrived with, so deep
+    // links like #/p/chronicle or #/cv render directly.
+    navigate();
 });

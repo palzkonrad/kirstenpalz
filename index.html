@@ -4,6 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>KIRSTEN PALZ</title>
+
+    <!-- AP3 SEO basics. Copy mirrors content/pages/about.json; the og:image is
+         the about portrait (absolute URL — scrapers don't resolve relative
+         paths), dimensions from tools/image-map.json. Hash routes are invisible
+         to crawlers, so these tags describe the site as a whole — per-project
+         previews would need prerendering (see DESIGN_NOTES.md). -->
+    <meta name="description" content="Kirsten Palz is a conceptual artist in Berlin whose research-driven work confronts climate change, species extinction and the challenges of the Anthropocene.">
+    <meta property="og:title" content="Kirsten Palz">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://palzkonrad.github.io/kirstenpalz/">
+    <meta property="og:description" content="Kirsten Palz is a conceptual artist in Berlin whose research-driven work confronts climate change, species extinction and the challenges of the Anthropocene.">
+    <meta property="og:image" content="https://palzkonrad.github.io/kirstenpalz/images/kirsten-palz-berlin.jpg">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="808">
+    <meta name="twitter:card" content="summary">
+
     <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -11,22 +27,24 @@
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
+            <!-- AP3: all nav links carry real "#/…" route hrefs (see the route
+                 table in script.js); the hash router renders from the URL. -->
             <div class="sidebar-header">
-                <a href="#" class="nav-link project-link" data-project-id="about" id="about-toggle" style="text-decoration: none; color: inherit; border: none;">
+                <a href="#/about" class="nav-link" id="about-toggle" style="text-decoration: none; color: inherit; border: none;">
                     <h1 class="logo-text">KIRSTEN PALZ <span style="font-size: 10px; vertical-align: middle;">▼</span></h1>
                 </a>
                 <ul class="sub-nav-links" id="about-dropdown" style="display: none; padding-top: 15px; padding-left: 0; list-style: none;">
-                    <li><a href="#" class="nav-link project-link" data-project-id="now" style="font-size: 11px;">// NOW</a></li>
-                    <li><a href="#" class="nav-link project-link" data-project-id="cv" style="font-size: 11px;">C.V.</a></li>
+                    <li><a href="#/now" class="nav-link" style="font-size: 11px;">// NOW</a></li>
+                    <li><a href="#/cv" class="nav-link" style="font-size: 11px;">C.V.</a></li>
                 </ul>
             </div>
             <ul class="nav-links">
-                <li><a href="#" class="nav-link active" data-target="home">PROJECTS</a></li>
-                <li><a href="#" class="nav-link" data-target="engagement">ENGAGEMENT</a></li>
-                <li><a href="#" class="nav-link project-link" data-project-id="sculpture">SCULPTURE AS WRITING</a></li>
-                <li><a href="#" class="nav-link project-link" data-project-id="absences">INVENTORY OF ABSENCES</a></li>
-                <li><a href="#" class="nav-link project-link" data-project-id="ai-research">A.I. ARTIFICIAL INTELLIGENCE</a></li>
-                <li><a href="#" class="nav-link project-link" data-project-id="thanks">THANKS</a></li>
+                <li><a href="#/" class="nav-link active">PROJECTS</a></li>
+                <li><a href="#/engagement" class="nav-link">ENGAGEMENT</a></li>
+                <li><a href="#/sculpture" class="nav-link">SCULPTURE AS WRITING</a></li>
+                <li><a href="#/absences" class="nav-link">INVENTORY OF ABSENCES</a></li>
+                <li><a href="#/ai-research" class="nav-link">A.I. ARTIFICIAL INTELLIGENCE</a></li>
+                <li><a href="#/thanks" class="nav-link">THANKS</a></li>
             </ul>
         </nav>
 
