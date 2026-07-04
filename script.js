@@ -9,9 +9,14 @@
 // ── PAGE REGISTRY ────────────────────────────────────────────────────────────
 // Every id listed here is (a) fetched from content/pages/<id>.json and
 // (b) automatically routable as "#/<id>" — no router changes needed.
-// To add a page (e.g. AP5: impressum, datenschutz): drop the JSON file into
-// content/pages/ and append its id to this list. That's all.
-const PAGE_IDS = ['about', 'now', 'cv', 'thanks', 'sculpture', 'absences', 'ai-research'];
+// To add a page: drop the JSON file into content/pages/ and append its id
+// to this list. That's all (AP5 added impressum + datenschutz exactly so).
+const PAGE_IDS = ['about', 'now', 'cv', 'thanks', 'sculpture', 'absences', 'ai-research', 'impressum', 'datenschutz'];
+
+// AP5: the site is English (<html lang="en">), but the legal pages are
+// written in German. Ids listed here get lang="…" on the detail-view
+// container so screen readers/hyphenation switch language per page.
+const PAGE_LANGS = { impressum: 'de', datenschutz: 'de' };
 
 const contentState = {
     byId: {},      // registry: id → entry (projects + engagement + pages)
@@ -194,34 +199,67 @@ document.addEventListener('DOMContentLoaded', async () => {
     };
 
     // SoundCloud embeds are built from plain track URLs in the content JSON
-    // (iframes would not survive the CMS editor). Click-to-load follows in AP5.
+    // (iframes would not survive the CMS editor).
+    //
+    // AP5 — click-to-load (two-click solution, GDPR): nothing is requested
+    // from SoundCloud (no iframe, no thumbnail) until the visitor presses the
+    // LOAD SOUND button. Only then is the player iframe injected into the
+    // placeholder frame. A real <button> keeps it keyboard-operable; the
+    // global button:focus-visible outline applies. Styles: .sound-* in
+    // style.css.
+    const buildSoundIframe = (sound) => {
+        const iframe = document.createElement('iframe');
+        iframe.width = '100%';
+        iframe.height = '166';
+        iframe.setAttribute('scrolling', 'no');
+        iframe.setAttribute('frameborder', 'no');
+        iframe.setAttribute('allow', 'autoplay');
+        iframe.loading = 'lazy';
+        iframe.title = sound.title || 'SoundCloud player';
+        iframe.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(sound.url)
+            + '&color=%23000000&auto_play=false&show_user=true';
+        return iframe;
+    };
+
     const renderSounds = (container, sounds) => {
         if (!Array.isArray(sounds) || sounds.length === 0) return;
         sounds.forEach((sound) => {
             if (!sound || !sound.url) return;
             const block = document.createElement('div');
             block.className = 'sound-embed';
-            block.style.margin = '30px 0';
+
+            const placeholder = document.createElement('div');
+            placeholder.className = 'sound-placeholder';
 
             const title = document.createElement('p');
-            title.style.marginBottom = '10px';
+            title.className = 'sound-title';
             const strong = document.createElement('strong');
             strong.textContent = sound.title || '';
             title.appendChild(strong);
 
-            const iframe = document.createElement('iframe');
-            iframe.width = '100%';
-            iframe.height = '166';
-            iframe.setAttribute('scrolling', 'no');
-            iframe.setAttribute('frameborder', 'no');
-            iframe.setAttribute('allow', 'autoplay');
-            iframe.loading = 'lazy';
-            iframe.title = sound.title || 'SoundCloud player';
-            iframe.src = 'https://w.soundcloud.com/player/?url=' + encodeURIComponent(sound.url)
-                + '&color=%23000000&auto_play=false&show_user=true';
+            const loadBtn = document.createElement('button');
+            loadBtn.type = 'button';
+            loadBtn.className = 'sound-load-btn';
+            loadBtn.textContent = '▶ LOAD SOUND';
 
-            block.appendChild(title);
-            block.appendChild(iframe);
+            const hint = document.createElement('p');
+            hint.className = 'sound-load-hint';
+            hint.textContent = 'Loading transfers data to SoundCloud.';
+
+            loadBtn.addEventListener('click', () => {
+                const iframe = buildSoundIframe(sound);
+                loadBtn.remove();
+                hint.remove();
+                placeholder.appendChild(iframe);
+                // The button (the focused element) is gone — hand focus to the
+                // player so keyboard users are not dropped back to <body>.
+                iframe.focus();
+            }, { once: true });
+
+            placeholder.appendChild(title);
+            placeholder.appendChild(loadBtn);
+            placeholder.appendChild(hint);
+            block.appendChild(placeholder);
             container.appendChild(block);
         });
     };
@@ -296,7 +334,15 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
 
         sections.forEach(sec => sec.classList.remove('active'));
-        document.getElementById('project-detail').classList.add('active');
+        const detailSection = document.getElementById('project-detail');
+        // AP5: German legal pages announce their language on the container
+        // (see PAGE_LANGS); every other entry inherits <html lang="en">.
+        if (PAGE_LANGS[projectId]) {
+            detailSection.setAttribute('lang', PAGE_LANGS[projectId]);
+        } else {
+            detailSection.removeAttribute('lang');
+        }
+        detailSection.classList.add('active');
         scrollContentTop();
 
         // Scroll reveal: tag the description block plus every image-box

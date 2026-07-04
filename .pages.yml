@@ -275,3 +275,41 @@ content:
             component: feld_bilder
           - name: sounds
             component: feld_sounds
+
+      - name: impressum
+        label: Impressum
+        type: file
+        path: content/pages/impressum.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: datenschutz
+        label: Datenschutzerklärung
+        type: file
+        path: content/pages/datenschutz.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds

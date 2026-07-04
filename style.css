@@ -729,6 +729,98 @@ body::before {
 }
 
 /* ============================================================
+   AP5 — SIDEBAR LEGAL FOOTER (IMPRESSUM · DATENSCHUTZ)
+   ------------------------------------------------------------
+   Quiet, label-sized, muted. .nav-links has flex-grow: 1, so
+   this block sits at the bottom of the sidebar column — on
+   desktop and inside the full-screen mobile drawer alike.
+   ============================================================ */
+.sidebar-footer {
+    padding-top: var(--space-md);
+    border-top: 1px solid var(--border-soft);
+    font-size: var(--fs-label);
+    letter-spacing: var(--track-label);
+    color: var(--muted);
+}
+
+.legal-link {
+    color: var(--muted);
+    text-decoration: none;
+    transition: color var(--dur-fast) var(--ease);
+}
+
+.legal-link:hover,
+.legal-link:focus-visible {
+    color: var(--text-color);
+}
+
+.legal-sep {
+    margin: 0 4px;
+}
+
+/* ============================================================
+   AP5 — SOUNDCLOUD CLICK-TO-LOAD (two-click consent)
+   ------------------------------------------------------------
+   Before consent: a bordered brutalist frame with the track
+   title, a LOAD SOUND button and a one-line data notice — zero
+   requests to SoundCloud. After the click, script.js swaps the
+   button + hint for the player iframe inside the same frame.
+   ============================================================ */
+.sound-embed {
+    margin: 30px 0;
+}
+
+.sound-placeholder {
+    border: 1px solid var(--border-color);
+    padding: 20px;
+}
+
+/* Scoped overrides beat the .brutalist-post p defaults (specificity) */
+.sound-embed .sound-title {
+    margin-bottom: 14px;
+    line-height: 1.4;
+}
+
+.sound-load-btn {
+    /* Mirrors .back-btn — one button voice across the site */
+    background: transparent;
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    padding: 12px 22px;
+    min-height: 44px;   /* touch target floor */
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+}
+
+.sound-load-btn:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+}
+
+.sound-embed .sound-load-hint {
+    margin: 10px 0 0;
+    font-size: var(--fs-label);
+    letter-spacing: 0.08em;
+    line-height: 1.5;
+    color: var(--muted);
+}
+
+/* The loaded iframe sits inside the placeholder frame — drop the
+   generic .brutalist-post iframe border/margin to avoid doubling. */
+.sound-placeholder iframe {
+    display: block;
+    border: none;
+    margin-bottom: 0;
+}
+
+/* ============================================================
    SCROLL REVEAL (progressive enhancement)
    ------------------------------------------------------------
    Elements tagged [data-reveal] start hidden ONLY when JS has
@@ -777,6 +869,13 @@ html.js [data-reveal].is-visible {
 
     /* Larger touch targets inside the full-screen menu (WCAG 2.5.5) */
     .sidebar .nav-link {
+        display: inline-flex;
+        align-items: center;
+        min-height: 44px;
+    }
+
+    /* AP5: same touch-target floor for the legal footer links */
+    .sidebar-footer .legal-link {
         display: inline-flex;
         align-items: center;
         min-height: 44px;
