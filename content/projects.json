@@ -1,0 +1,398 @@
+[
+  {
+    "id": "chronicle",
+    "title": "Chronicle of Extinction",
+    "description": "<p><strong>Chronicle of Extinction (2021–ongoing)</strong></p><p>Chronicle of Extinction is a project dedicated to documenting extinct species. Through printed scores, each work lists 12 members of a specific extinct species, naming them in full according to scientific taxonomy, which classifies species by genus, phylum, and other categories.</p><p><strong>Format</strong></p><p>The prints are visually formatted like musical scores, inviting future interpretation and performance. Supported by the Berlin Senate research grant in 2021, this ongoing project adds twelve new books to the series each year, expanding its scope and deepening its engagement with themes of loss and memory.</p>",
+    "images": [
+      {
+        "src": "images/chronicle-01.jpg",
+        "alt": "Printed booklets from the Chronicle of Extinction series listing extinct species in scientific taxonomy",
+        "caption": "Chronicle of Extinction 2021 by Kirsten Palz",
+        "width": 1000,
+        "height": 1194
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "probes",
+    "title": "Probes of Extinction",
+    "description": "<p><strong>Probes of Extinction (2022–ongoing)</strong></p><p>Probes of Extinction is an evolving collection of video footage that documents the details and characteristics of extinct species. Initiated in 2022, the work presents a range of biological elements such as skin, leaves, blossoms, plumage, bone structures, extremities, and fur.</p><p>The project is framed within the context of the ongoing sixth mass extinction, driven by humanity’s unsustainable exploitation of land, water, and energy resources. The resulting catastrophic shifts in climate intensify this crisis, marking an irreversible decline in biodiversity within our lifetime.</p><p>Probes of Extinction forms part of the archive Chronicle of Extinction, which confronts the loss of species.</p><p>The project received support from Stiftung Kunstfonds in 2022.</p>",
+    "images": [
+      {
+        "src": "images/extinction-probes-01.jpg",
+        "alt": "Video still of purple-tinted skin and plumage of an extinct species in close-up",
+        "caption": "Probes of Extinction 2021 by Kirsten Palz",
+        "width": 1000,
+        "height": 994
+      },
+      {
+        "src": "images/extinction-probes-02.jpg",
+        "alt": "Video still of a preserved bird with pink and yellow plumage against a black background",
+        "caption": "Probes of Extinction 2021 by Kirsten Palz",
+        "width": 1000,
+        "height": 999
+      },
+      {
+        "src": "images/extinction-probes-03.jpg",
+        "alt": "Video still of a bird skull in violet tones against a black background",
+        "caption": "Probes of Extinction 2021 by Kirsten Palz",
+        "width": 1000,
+        "height": 995
+      },
+      {
+        "src": "images/extinction-probes-04.jpg",
+        "alt": "Video still of pale pink organic tissue in extreme close-up",
+        "caption": "Probes of Extinction 2021 by Kirsten Palz",
+        "width": 1000,
+        "height": 999
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "below-sun",
+    "title": "Below the Sun",
+    "description": "<p><strong>Below the Sun (2020)</strong></p><p>Sound and video installation with live reading</p><p>Premiered at Changing Room, Berlin, 2020.</p><p>The live reading was based on the score Below the Sun / Book of Verse.</p><p>On Christmas Day 1972, the Apollo 17 mission captured the iconic photograph of Earth, later known as The Blue Marble. This fragile, glass-like image of our planet inspired a growing ecological awareness in the decades that followed. Yet more than 50 years later, relentless consumerism and environmental destruction have driven the world’s ecosystems to the brink of collapse.</p><p>The Sun, a central figure in both ancient mythology and modern science, forms the core of the narrative in Below the Sun.</p><p>The installation combines computer-animated imagery of burning gases with a live reading, visualizing atomic processes and transformations. The video reflects on the autonomous, untamed behavior of burning gases and on the Sun as the most powerful energy source in our solar system.</p>",
+    "images": [
+      {
+        "src": "images/below-sun-01.jpg",
+        "alt": "Video projection of a glowing sun-like orb seen through dark foliage at night",
+        "caption": "Below the Sun by Kirsten Palz, Changing Room, Berlin",
+        "width": 1000,
+        "height": 750
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "substances",
+    "title": "Substances",
+    "description": "<p><strong>Substance (2024)</strong></p><p>Substance is a public artwork presented as flyers distributed throughout public spaces in Berlin. Designed to engage passersby directly, Substance makes use of prints and posters displayed in the street environment, glued onto walls and streetlamps.</p><p>The work draws attention to 24 different groups of pesticides used in agricultural and natural environments. Each flyer provides a detailed explanation of its usage, covering categories such as insecticides, fungicides, herbicides, acaricides, biocides, and more.</p><p>The project confronts the fatal synthetic reshaping of living environments and is part of the archive Chronicle of Extinction. It also draws a historical line back to the Agricultural Revolution (1815–1880), a period marked by advances in soil chemistry and the rising use of chemical fertilizers. These practices, which expanded explosively a century later, laid the groundwork for today’s large-scale dependence on synthetic substances and the ecological crises addressed in the work IMPACT (2023-2025).</p>",
+    "images": [
+      {
+        "src": "images/flugblatt.jpg",
+        "alt": "Black-and-white flyers with statements about pesticide groups laid out on a dark surface",
+        "caption": "24 flyers for public space (2025)",
+        "width": 1000,
+        "height": 1333
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "temperatures",
+    "title": "Temperatures",
+    "description": "<p><strong>Temperatures - Precipitation - Wind (2020)</strong></p><p>This visual research into weather examines data on temperatures, precipitation, and wind. Measurements from NYC’s weather stations, starting in 1994, are translated into spike graphs, reflecting the dramatic fluctuations in temperature.</p><p>The video was created as part of Re-Imagining America. The exhibition featured works by artists who, over the course of their careers, have moved between the United States and Germany – particularly between New York City and Berlin. Through the selected artworks, the project explores narratives about the self-understanding of artists.</p><p>Video: 1:36 minutes (played on loop)</p>",
+    "images": [
+      {
+        "src": "images/temperatures-1994.jpg",
+        "alt": "Graph with a red curve plotting monthly 1994 NYC precipitation values on a black background",
+        "caption": "Temperatures (2021) video by Kirsten Palz",
+        "width": 1600,
+        "height": 1137
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "impact-china",
+    "title": "Impact China / 影响",
+    "description": "<p><strong>Impact China / 影响 (2023–2025)</strong></p><p>The video 影响 was shown in the exhibition Landscapes of Futures Past, curated by David Elliott & Rachel Rits-Volloch in Jiayuanhai art museum. The exhibition brought together contemporary video art, digital animation, installation, and traditional artistic media such as tapestry and painting, reframed through the lens of our digitized era.</p><p>The catalogue text notes:</p><p>A landscape is a terrain, or a view of it, that we endow with aesthetic, emotional, spiritual, and physical qualities. Predominantly natural, it may reflect a sense of beauty, permanence, and place, yet it is also subject to fluctuating pressures and changes.</p><p>The landscape images and scenes featured in 影响 are synthetically created using AI production tools, in dialogue with the history of landscape photography.</p><p>Sources: United States Department of Agriculture (USDA), National Library of Medicine (NLM), National Center for Biotechnology Information (NCBI), National Institute of Standards and Technology (NIST), National Institutes of Health (NIH), and information from private chemical manufacturing companies.</p><p>Team of Production:</p><p>Research and concept: Kirsten Palz</p><p>Video editor and production: Fabian Mrongowius</p><p>Data-driven graphics: Thomas Bohne and Ludwig Küster</p><p>Stills: Kirsten Palz</p><p>Sound: Kirsten Palz with samples by Honoka Uchiito</p><p>Translation: Yang Wang</p><p><a href=\"https://www.jyhartmuseum.com/\">https://www.jyhartmuseum.com/</a></p><p>Archive Sculpture as Writing</p><p>© 2025 Kirsten Palz</p>",
+    "images": [
+      {
+        "src": "images/jyhartmuseum-exhibition-view.jpg",
+        "alt": "Dark exhibition room with two video projections showing landscapes and a red data panel",
+        "caption": "Installation view LONG Pan and Kirsten Palz. In Jiayuanhai art museum, Shanghai.",
+        "width": 1146,
+        "height": 660
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "impact",
+    "title": "Impact",
+    "description": "<p><strong>IMPACT (2023–2025)</strong></p><p>The video IMPACT is a comprehensive visual narrative about the global use of 785 pesticides in nature and agriculture. Drawing upon data provided by state government institutions that monitor pesticide usage worldwide, the work is grounded in meticulously sourced information. Through its exploration, IMPACT classifies pesticides into subcategories such as herbicides, insecticides, fungicides, rodenticides, acaricides, molluscicides, and more. These substances, integral to modern agricultural practices, are depicted for their pervasive influence on ecosystems. The landscape images and scenes featured in IMPACT are synthetically created using AI production tools and combined with recorded footage. These landscapes merge surreal ‘larger-than-life’ environments with reflections of the fragile state of natural ecosystems affected by pesticide use. The juxtaposition of chemical data and landscape imagery invites viewers to contemplate the complex relationship between human activity and the natural world. As an ongoing project, IMPACT deals with the dependency on pesticides and their consequences for biodiversity, soil health, water systems, and human well-being. IMPACT (2023–2025) is part of the archive ‘Chronicle of Extinction’ on humankind’s interaction with the environment, blending research and activism.</p><p>Sources: United States Department of Agriculture (USDA), National Library of Medicine (NLM), National Center for Biotechnology Information (NCBI), National Institute of Standards and Technology (NIST), National Institutes of Health (NIH), and information from private chemical manufacturing companies.</p><p>Archive Sculpture as Writing</p><p>© 2025 Kirsten Palz</p>",
+    "images": [
+      {
+        "src": "images/kirsten-palz-impact.jpg",
+        "alt": "Outdoor projection of a red pesticide data card over a black-and-white river landscape",
+        "caption": "Screening IMPACT (2023-2025) by Kirsten Palz",
+        "width": 1250,
+        "height": 938
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "urhuette",
+    "title": "Urhütte / Haus 112",
+    "description": "<p><strong>Urhütte / Haus 112 (Building Specifications since 2015)</strong></p><p>homecoming1,2,3 etc., published by Archive Books.</p><p>Urhütte /Haus 112 is a series of plans for housing units. First shown in 2015, the work examines western living conditions and the imagination of habitat. Each architectural scheme presents an Ürhütte with one specific attribute. Each Ürhütte consists of a ceiling and fireplace, inspired by the original concept of the Ürhütte by Marc-Antoine Laugier (1713–1769), who introduced the rustic cabin, sometimes called The Vitruvian Hut. The addition of one extra element breaks the original rules, transforming the structure. The work serves as a critical reflection on contemporary notions of home and the structures we inhabit. The project has evolved into a series of 21 building specifications to date. Several talks and lectures have been held to engage with the Haus 112 project, discussing the broader implications of these designs, offering a critical perspective on architectural practice and society.</p><p>Building specifications for individual habitats include: //Foundation for Urhütte //Urhütte as brick bungalow //Urhütte with green roof-garden //Urhütte from collected wood //Half-diamond Urhütte //Urhütte with playground //Urhütte with collector`s shelves //Urhütte with balancing rope //Urhütte with note-book //Urhütte for sleep //Urhütte with four gliding windows //Urhütte with running water //Urhütte with underground parking //Urhütte with earthworms //Urhütte with neighbours //Urhütte on water //Urhütte mit Geliebte*r //Urhütte with Steinway flügel //Urhütte in Metropolis // Urhütte with greenhouse //Urhütte with star observatory //Urhütte as museum.</p>",
+    "images": [
+      {
+        "src": "images/urhuette-01.jpg",
+        "alt": "Cover spread of the publication homecomings 1, 2, 3, etc. with a list of contributors",
+        "caption": "homecomings",
+        "width": 1200,
+        "height": 1282
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "forest",
+    "title": "Forest Research Platform",
+    "description": "<p><strong>Forest Research Platform</strong></p><p>I am part of the multi-year project initiated by Christl Mudrak.</p><p>Zur Kiesgrube</p><p>414621 Schönweide-Glien</p><p>OT Grünefeld</p><p>Deutschland</p><p>@forest_research_platform</p><p>- An invitation to engage in interactive processes involving collaborators, participants, as well as animals and plants, serve in this research project to reveal authorship as a connecting and communicative element.</p><p>In a forest shaped and managed by human hands, the methods and principles of nonviolence towards all forms of life will be explored and reflected upon through artistic means. Imagine, for a moment, that all beings and substances in this place were regarded as equal from a human perspective, what implications might this have for our actions and ways of coexisting?</p><p>Throughout the multi-year project, international artists will be invited to create permanent works based on the premise of coexistence in nonviolence. In parallel, regular guided tours, workshops for students and enthusiasts, as well as performances, interventions, and lectures, will offer both the public and the artists diverse insights into the exhibition's theme.</p><p><a href=\"https://www.instagram.com/forest_research_platform/\">https://www.instagram.com/forest_research_platform/</a></p>",
+    "images": [
+      {
+        "src": "images/forest-research-platform.jpg",
+        "alt": "Forest Research Platform poster pasted on a wall in Berlin next to a photo of a young planted tree",
+        "caption": "Poster in Berlin to Forest Research Platform / 1 of 280 threes planted by Kirsten Palz in Krämerwald.",
+        "width": 1470,
+        "height": 963
+      },
+      {
+        "src": "images/forest-02.jpg",
+        "alt": "Green-on-brown poster announcing the Forest Research Platform opening in Krämerwald",
+        "caption": "Poster in Berlin to Forest Research Platform / 1 of 280 threes planted by Kirsten Palz in Krämerwald.",
+        "width": 1290,
+        "height": 903
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "sound-1",
+    "title": "Sound I",
+    "description": "<p><strong>Sound I</strong></p><p>Platzhalter für die MP3-Dateien, die noch hinzugefügt werden.</p>",
+    "images": [],
+    "sounds": []
+  },
+  {
+    "id": "sound-2",
+    "title": "Sound II",
+    "description": "<p><strong>Sound II</strong></p><p>My work with sound engages with the environment and contributes to a broader research into sound as materiality.</p><p>The five sounds is composed for the video IMPACT on environmental death caused by the slow, continuous spread of chemical contaminants in soil.</p><p>All sounds by Kirsten Palz with samples by Honoka Uchiito.</p><p>With an educational training in youth of reading and writing classical score music, I began exploring sound in 2020 through computer-generated audio, digital sound engineering (DAW), and live field recordings. Since then, I have used sound as an environmental layer within several exhibitions.</p><p><strong>Psychotropic Sculpture 2016</strong></p><p>Performance in Tokyo Wonder Site, Japan. It was conceived specifically for the residency building’s floor plan. The piece grew out of an imaginative interpretation of the site, developed by studying its architectural drawings. It was created on the invitation of curator Isabel de Sena, who was in Tokyo for a research trip on the Japanese group Gutai.</p><p><strong>Opus 13 Berlin (2020)</strong></p><p>The sound is based on destorted field recording from the streets of Berlin.</p><p><strong>Opus 5 Berlin (2020)</strong></p><p>The sound is based on destorted field recording from the subway system of Berlin.</p><p><strong>Opus 12 NYC (2020)</strong></p><p>The sound is based on destorted field recording from the streets of NYC.</p>",
+    "images": [
+      {
+        "src": "images/sound-2-01.jpg",
+        "alt": "Computer-rendered grey 3D relief resembling an aerial view of a structured landscape",
+        "caption": "",
+        "width": 1250,
+        "height": 682
+      },
+      {
+        "src": "images/sound-2-02.jpg",
+        "alt": "Computer-rendered grey 3D terrain with jagged spikes and flat plains",
+        "caption": "",
+        "width": 1250,
+        "height": 682
+      },
+      {
+        "src": "images/sound-2-03.jpg",
+        "alt": "Computer-rendered grey 3D model of raised plateaus with dotted tracks",
+        "caption": "",
+        "width": 1250,
+        "height": 682
+      },
+      {
+        "src": "images/sound-2-04.jpg",
+        "alt": "Computer-rendered grey 3D relief of dense block-like patterns resembling a grid",
+        "caption": "",
+        "width": 1250,
+        "height": 682
+      }
+    ],
+    "sounds": [
+      {
+        "title": "Psychotropic Sculpture 2016",
+        "url": "https://soundcloud.com/user-538461993/psychotropic-sculpture"
+      },
+      {
+        "title": "Opus 13 Berlin (2020)",
+        "url": "https://soundcloud.com/user-538461993/opus-13"
+      },
+      {
+        "title": "Opus 5 Berlin (2020)",
+        "url": "https://soundcloud.com/user-538461993/opus-5"
+      },
+      {
+        "title": "Opus 12 NYC (2020)",
+        "url": "https://soundcloud.com/user-538461993/opus-12"
+      }
+    ]
+  },
+  {
+    "id": "works",
+    "title": "100 Works",
+    "description": "<p><strong>100 Works</strong></p><p>Kirsten Palz, 100 Works, Files from the archive Sculpture as Writing (2007-2014) Read by Erik Steinbrecher</p><p>Author: Kirsten Palz</p><p>Publisher: rakete.co and Motto Books</p><p>Language: English</p><p>Pages: 100</p><p>Size: 21 x 29.5 cm</p>",
+    "images": [
+      {
+        "src": "images/works-01.jpg",
+        "alt": "Stack of white paper on a black background",
+        "caption": "",
+        "width": 370,
+        "height": 278
+      },
+      {
+        "src": "images/works-02.jpg",
+        "alt": "Open book spread showing Manual 0188, A priority of time",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-03.jpg",
+        "alt": "Open book spread showing Manual 0223, Judging distance",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-04.jpg",
+        "alt": "Open book spread showing Manual 0077, Plot",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-05.jpg",
+        "alt": "Open book spread showing Manual 0239, Sound accompanying the wind",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-06.jpg",
+        "alt": "Open book spread showing Manual 0456 on a distribution of materials",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-07.jpg",
+        "alt": "Open book spread showing Manual 0700, The spell of the mask",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-08.jpg",
+        "alt": "Open book spread showing Manual 0512 with a photograph of stacked luggage",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      },
+      {
+        "src": "images/works-09.jpg",
+        "alt": "Title page of the publication Kirsten Palz, 100 works",
+        "caption": "",
+        "width": 1250,
+        "height": 938
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "algorithm",
+    "title": "Set//Algorithm",
+    "description": "<p><strong>Set // Algorithm (2016)</strong></p><p>Set & Algorithm is a playwright structured as a conversation between two distinct identities, \"Set\" and \"Algorithm.\" These identities, rooted in concepts from computer science, are treated as psychograms. A set is defined as a collection of data, while an algorithm represents the process or rules applied to the set for calculations and problem-solving.</p><p>The work explores Set and Algorithm as self-growing, partially autonomous systems, looking into themes of contemporary language, power relations, logic, and mathematics. It questions the autonomy and logic of computer science and their broader implications for understanding computational processes.</p><p>First presented in 2016 as a theatrical dialogue performed by Tatiana Echeverri Fernandez and Elly Clarke, Set & Algorithm was part of the exhibition Data Mining Kiosk at the Nationalmuseum in Berlin.</p><p>The structure of the play features two voices, Set and Algorithm, each presented on individual pages designed like playing cards. These cards can be turned independently or sequentially, following their numerical order.</p><p>KP's interest in computer technology dates back to 1999. Having completed a master’s in computer science in 2003, KP has been deeply engaged with systems of surveillance, technology, computer code, and perception.</p>",
+    "images": [
+      {
+        "src": "images/algorithm-01.jpg",
+        "alt": "Numbered text sheet from the play showing the voice Algorithm speaking",
+        "caption": "set & algorithm (2016)",
+        "width": 1000,
+        "height": 1415
+      },
+      {
+        "src": "images/algorithm-02.jpg",
+        "alt": "Numbered text sheet from the play showing the voice Set speaking",
+        "caption": "set & algorithm (2016)",
+        "width": 1000,
+        "height": 1415
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "transmitter",
+    "title": "Transmitter",
+    "description": "<p><strong>Transmitter (2020)</strong></p><p>Transmitter is a video work based on data from the pharmaceutical industry. The video depicts the 200 most commonly distributed and sold medications for human use. Presented as an endless loop of slides, the work creates a continuous stream of information, offering a methodical and data-driven commentary on the intersection of industry, drug consumption, and collective health.</p><p>This work contributes to KP's broader research into the human condition, exploring themes of rationalization, optimization, and the status quo of the living world. By focusing on the circulation of pharmaceutical drugs, Transmitter invites reflection on consumption patterns, dependency, and the commodification of health in contemporary society.</p><p>The video was created as part of the exhibition Re-Imagining America at Spor Klübü in 2020. The exhibition examined themes of artist migration and self-awareness in relation to society, showcasing works by Berlin-based artists who have lived and worked between New York City and Berlin.</p>",
+    "images": [
+      {
+        "src": "images/transmitter-01.jpg",
+        "alt": "Projected yellow slide listing the medication Polymyxin B Sulfate in a dark room",
+        "caption": "Transmitter 2020 by Kirsten Palz",
+        "width": 1250,
+        "height": 1875
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "choreography",
+    "title": "Choreography",
+    "description": "<p><strong>Choreography</strong></p><p>Dance 001 (2015) were first performed by Efrat Stempler during the Month of Performance in Berlin in 2015. This choreography is part of the archive Sculpture as Writing. The project explores the intersections of language, translation, and movement.</p><p>The work examines language as a code that directs movement, emphasizing the potential for personal interpretation and autonomy in translation. The choreography is guided by a score composed of diagrammatic drawings and written text, serving as prompts for the dancer. The performer’s individual interpretation becomes a central aspect of the piece, subtly resisting the textual code from which it originates.</p><p>By focusing on the fluidity of translation within the body and the inherent openness of textual language, Dance 001 highlights how language can both guide and restrict, exposing the gaps and possibilities within its structure. Throughout the performance, the dancer repeatedly returns to the script, reminding the audience of the playwright-like setup and the interplay between predetermined structure and experimental expression.</p><p>Dance 001 transforms the dancer’s body into a site of interpretation, idiosyncrasy, and dialogue between text and motion, offering an investigation into the dynamic relationship between choreography and language.</p>",
+    "images": [
+      {
+        "src": "images/dance-001.jpg",
+        "alt": "Two video stills of dancer Efrat Stempler performing in an empty room",
+        "caption": "Dance 001 (2015) performed by Efrat Stempler",
+        "width": 1500,
+        "height": 2141
+      },
+      {
+        "src": "images/choreography-efrat.jpg",
+        "alt": "Cover page of the score Choreography for One / Dance 001",
+        "caption": "Choreography for one / Dance 001 Script for performance written by Kirsten Palz",
+        "width": 695,
+        "height": 1010
+      }
+    ],
+    "sounds": []
+  },
+  {
+    "id": "song-books",
+    "title": "Song Books",
+    "description": "<p><strong>Song Books (2016–2024)</strong></p><p>Song Books is an ongoing series of books and part of the archive Sculpture as Writing. Each songbook in this series is written in verse, with some pieces based on the structure of original compositions—one inspired by Johann Sebastian Bach’s church music, and one drawing from the dub music of British musician Linton Kwesi Johnson.</p><p>The works are designed not only for reading but also for various performances. Participants and actors are invited to transform the scripts into unforeseen scenes and compositions, adding layers of interpretation.</p><p>The first book in this series was created in 2016 for the exhibition Inglan is a Bitch at Spor Klübü in Berlin. Since then, the series has evolved, addressing a wide range of contemporary themes, including global warming, human engineering, the human body, COVID-19, war -referencing Käthe Kollwitz’s quote “Nie wieder Krieg” and loneliness.</p><p>Song Books draw on personal experiences and urgent global issues through language.</p>",
+    "images": [
+      {
+        "src": "images/song-books-01.jpg",
+        "alt": "Cover of Song Book / Book of Verse: Human Biotope and Bioengineering with drawn lines across it",
+        "caption": "Songbook/ Human Biotope and Bioengineering. Special Edition with drawing of Erik Steinbrecher. 2018",
+        "width": 1000,
+        "height": 1340
+      },
+      {
+        "src": "images/song-books-02.jpg",
+        "alt": "Cover of Song Book / Book of Verse, composed text",
+        "caption": "Songbook/ Book of Verse. Edition. 2016",
+        "width": 1000,
+        "height": 1363
+      },
+      {
+        "src": "images/song-books-03.jpg",
+        "alt": "Cover of Song Book / Book of Verse COVID-19",
+        "caption": "Song book/ Book of Verse COVID-19. Edition. 2020",
+        "width": 1000,
+        "height": 1445
+      },
+      {
+        "src": "images/song-books-04.jpg",
+        "alt": "Cover of Song Book / Book of Verse: Do We Feel Lonely?",
+        "caption": "Song book / Book of Verse Do we feel lonely. Edition. 2019",
+        "width": 1000,
+        "height": 1348
+      },
+      {
+        "src": "images/song-books-05.jpg",
+        "alt": "Cover of Song Book / Book of Verse: Below the Sun",
+        "caption": "Song book/ Book of Verse Below the Sun. Second Edition. 2020",
+        "width": 1000,
+        "height": 1426
+      }
+    ],
+    "sounds": []
+  }
+]

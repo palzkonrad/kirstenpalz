@@ -1,0 +1,15 @@
+{
+  "id": "about",
+  "title": "Kirsten Palz",
+  "description": "<p><strong>Kirsten Palz</strong></p><p>Kirsten Palz (KP) is a conceptual artist whose practice is rooted in research, language, and activism. The work addresses pressing global issues such as climate change, species extinction, the influence of the pharmaceutical industry, destructive consumption patterns, and the accelerated degradation of Earth's ecosystems.</p><p>The practice integrates feminist and conceptual methodologies with interdisciplinary approaches, research-driven processes, and new technologies.</p><p>Over the past five years, KP has focused on archiving the documentation of destruction and the challenges of the Anthropocene age. The archive Chronicle of Extinction encompasses prints, performances, video works, and sound installations. These works serve as both acts of activism and documentation.</p><p>KP's methods include self-written texts, the use of AI, pop-cultural aesthetics, and scientific research methodologies, including research into data from institutional libraries and private companies, to create knowledge-based works. KP's latest works are collected in the Chronicle of Extinction archive, which centers on themes of climate change and the destruction of biodiversity.</p><p>KP's artistic practice is rooted in a deep interest in language and its capacity to serve as a catalyst.</p><p>In the early 1990s, KP established a writing practice she later labeled Sculpture as Writing. Initially grounded in technical manuals and diary entries, this body of work has expanded to include scores, flyers, playwrights, architectural plans, choreographies, and programming.</p>",
+  "images": [
+    {
+      "src": "images/kirsten-palz-berlin.jpg",
+      "alt": "Portrait of Kirsten Palz standing in her studio in front of windows covered with printed sheets",
+      "caption": "Kirsten Palz photographed by Till Cremer",
+      "width": 600,
+      "height": 808
+    }
+  ],
+  "sounds": []
+}
