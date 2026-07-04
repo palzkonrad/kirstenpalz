@@ -1,0 +1,11 @@
+{
+  "name": "kirstenpalz-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "optimize-images": "node tools/optimize-images.mjs"
+  },
+  "devDependencies": {
+    "sharp": "^0.35.3"
+  }
+}

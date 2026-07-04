@@ -1,0 +1,354 @@
+{
+  "Kirsten-Palz-Berlin.jpeg": {
+    "new": "images/kirsten-palz-berlin.jpg",
+    "width": 600,
+    "height": 808,
+    "usedBy": [
+      "about"
+    ]
+  },
+  "EXTINCTION_Palz29.jpeg": {
+    "new": "images/chronicle-01.jpg",
+    "width": 1000,
+    "height": 1194,
+    "usedBy": [
+      "chronicle"
+    ]
+  },
+  "extinction-probes.png": {
+    "new": "images/extinction-probes-01.jpg",
+    "width": 1000,
+    "height": 994,
+    "usedBy": [
+      "probes"
+    ]
+  },
+  "extinction-probes05.png": {
+    "new": "images/extinction-probes-02.jpg",
+    "width": 1000,
+    "height": 999,
+    "usedBy": [
+      "probes"
+    ]
+  },
+  "extinction-probes06.png": {
+    "new": "images/extinction-probes-03.jpg",
+    "width": 1000,
+    "height": 995,
+    "usedBy": [
+      "probes"
+    ]
+  },
+  "extinction-probes022.png": {
+    "new": "images/extinction-probes-04.jpg",
+    "width": 1000,
+    "height": 999,
+    "usedBy": [
+      "probes"
+    ]
+  },
+  "image28.jpeg": {
+    "new": "images/below-sun-01.jpg",
+    "width": 1000,
+    "height": 750,
+    "usedBy": [
+      "below-sun"
+    ]
+  },
+  "flugblatt.jpg": {
+    "new": "images/flugblatt.jpg",
+    "width": 1000,
+    "height": 1333,
+    "usedBy": [
+      "substances"
+    ]
+  },
+  "Temperatures-1994.png": {
+    "new": "images/temperatures-1994.jpg",
+    "width": 1600,
+    "height": 1137,
+    "usedBy": [
+      "temperatures"
+    ]
+  },
+  "forest-research-platform-2.png": {
+    "new": "images/forest-research-platform.jpg",
+    "width": 1470,
+    "height": 963,
+    "usedBy": [
+      "forest"
+    ]
+  },
+  "Invitation.png": {
+    "new": "images/forest-02.jpg",
+    "width": 1290,
+    "height": 903,
+    "usedBy": [
+      "forest"
+    ]
+  },
+  "image2.png": {
+    "new": "images/sound-2-01.jpg",
+    "width": 1250,
+    "height": 682,
+    "usedBy": [
+      "sound-2"
+    ]
+  },
+  "image3.png": {
+    "new": "images/sound-2-02.jpg",
+    "width": 1250,
+    "height": 682,
+    "usedBy": [
+      "sound-2"
+    ]
+  },
+  "image4.png": {
+    "new": "images/sound-2-03.jpg",
+    "width": 1250,
+    "height": 682,
+    "usedBy": [
+      "sound-2"
+    ]
+  },
+  "image5.png": {
+    "new": "images/sound-2-04.jpg",
+    "width": 1250,
+    "height": 682,
+    "usedBy": [
+      "sound-2"
+    ]
+  },
+  "image6.png": {
+    "new": "images/works-01.jpg",
+    "width": 370,
+    "height": 278,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image7.png": {
+    "new": "images/works-02.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image8.png": {
+    "new": "images/works-03.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image9.png": {
+    "new": "images/works-04.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image10.png": {
+    "new": "images/works-05.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image11.png": {
+    "new": "images/works-06.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image12.png": {
+    "new": "images/works-07.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image13.png": {
+    "new": "images/works-08.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image14.png": {
+    "new": "images/works-09.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "works"
+    ]
+  },
+  "image15.png": {
+    "new": "images/algorithm-01.jpg",
+    "width": 1000,
+    "height": 1415,
+    "usedBy": [
+      "algorithm"
+    ]
+  },
+  "image16.png": {
+    "new": "images/algorithm-02.jpg",
+    "width": 1000,
+    "height": 1415,
+    "usedBy": [
+      "algorithm"
+    ]
+  },
+  "image17.png": {
+    "new": "images/transmitter-01.jpg",
+    "width": 1250,
+    "height": 1875,
+    "usedBy": [
+      "transmitter"
+    ]
+  },
+  "dance001_KP_small.jpg": {
+    "new": "images/dance-001.jpg",
+    "width": 1500,
+    "height": 2141,
+    "usedBy": [
+      "choreography"
+    ]
+  },
+  "Choreography_Efrat.png": {
+    "new": "images/choreography-efrat.jpg",
+    "width": 695,
+    "height": 1010,
+    "usedBy": [
+      "choreography"
+    ]
+  },
+  "image18.png": {
+    "new": "images/song-books-01.jpg",
+    "width": 1000,
+    "height": 1340,
+    "usedBy": [
+      "song-books"
+    ]
+  },
+  "image19.png": {
+    "new": "images/song-books-02.jpg",
+    "width": 1000,
+    "height": 1363,
+    "usedBy": [
+      "song-books"
+    ]
+  },
+  "image20.png": {
+    "new": "images/song-books-03.jpg",
+    "width": 1000,
+    "height": 1445,
+    "usedBy": [
+      "song-books"
+    ]
+  },
+  "image21.png": {
+    "new": "images/song-books-04.jpg",
+    "width": 1000,
+    "height": 1348,
+    "usedBy": [
+      "song-books"
+    ]
+  },
+  "image22.png": {
+    "new": "images/song-books-05.jpg",
+    "width": 1000,
+    "height": 1426,
+    "usedBy": [
+      "song-books"
+    ]
+  },
+  "jyhartmuseum_exhibition-view_JPG.jpeg": {
+    "new": "images/jyhartmuseum-exhibition-view.jpg",
+    "width": 1146,
+    "height": 660,
+    "usedBy": [
+      "impact-china"
+    ]
+  },
+  "image25.png": {
+    "new": "images/le-foyer-01.jpg",
+    "width": 1000,
+    "height": 750,
+    "usedBy": [
+      "le-foyer"
+    ]
+  },
+  "image26.png": {
+    "new": "images/art-feminism-01.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "art-feminism"
+    ]
+  },
+  "image27.png": {
+    "new": "images/book-fairs-01.jpg",
+    "width": 1000,
+    "height": 1333,
+    "usedBy": [
+      "book-fairs"
+    ]
+  },
+  "friends-with-books.jpeg": {
+    "new": "images/friends-with-books.jpg",
+    "width": 1500,
+    "height": 1125,
+    "usedBy": [
+      "book-fairs"
+    ]
+  },
+  "KirstenPalz_IMPACT_small.jpeg": {
+    "new": "images/kirsten-palz-impact.jpg",
+    "width": 1250,
+    "height": 938,
+    "usedBy": [
+      "impact"
+    ]
+  },
+  "image24.png": {
+    "new": "images/acta-01.jpg",
+    "width": 1250,
+    "height": 841,
+    "usedBy": [
+      "acta"
+    ]
+  },
+  "Z1-city.jpg": {
+    "new": "images/z1-city.jpg",
+    "width": 1409,
+    "height": 792,
+    "usedBy": [
+      "acta"
+    ]
+  },
+  "image28.png": {
+    "new": "images/acta-03.jpg",
+    "width": 1250,
+    "height": 902,
+    "usedBy": [
+      "acta"
+    ]
+  },
+  "https://freight.cargo.site/.../homecomings.png": {
+    "new": "images/urhuette-01.jpg",
+    "width": 1200,
+    "height": 1282,
+    "usedBy": [
+      "urhuette"
+    ]
+  }
+}

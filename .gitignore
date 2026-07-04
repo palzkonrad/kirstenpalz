@@ -17,6 +17,12 @@ DESIGN_NOTES.md
 # Quell-/Konzeptmaterial
 *.docx
 
+# Node-Abhängigkeiten (Build-Werkzeuge, z. B. tools/optimize-images.mjs)
+node_modules/
+
+# Heruntergeladene Original-Bilder (Zwischenprodukt von tools/optimize-images.mjs)
+tools/_downloads/
+
 # System / Editor
 .DS_Store
 .antigravity/
