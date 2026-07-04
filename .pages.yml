@@ -1,0 +1,277 @@
+# Pages CMS Konfiguration (pagescms.org) für kirstenpalz.de
+# AP2b: Rohfassung — Roundtrip-Test im echten CMS folgt in AP6.
+#
+# Hinweise:
+# - Alle Labels/Hilfetexte auf Deutsch, formuliert für eine nicht-technische Nutzerin.
+# - media.output OHNE führenden Slash, damit "images/…" (relativ) in den Content
+#   geschrieben wird — die Website läuft unter dem Basispfad /kirstenpalz/.
+# - Gemeinsame Felddefinitionen als "components" (dokumentiertes Feature),
+#   referenziert per "component:" — keine YAML-Anchors.
+
+media:
+  - name: images
+    label: Bilder
+    input: images
+    output: images
+    categories: [image]
+    rename: safe
+
+# ---------------------------------------------------------------------------
+# Wiederverwendbare Felddefinitionen — jeder Eintrag (Projekt, Engagement,
+# Einzelseite) hat dieselben fünf Felder: id, title, description, images, sounds.
+# ---------------------------------------------------------------------------
+components:
+  feld_id:
+    type: string
+    label: Technischer Name
+    description: "Nicht ändern — wird für den Link verwendet."
+    required: true
+    pattern:
+      regex: "^[a-z0-9-]+$"
+      message: "Nur Kleinbuchstaben (a–z), Zahlen und Bindestriche erlaubt — keine Leerzeichen, Umlaute oder Großbuchstaben."
+
+  feld_titel:
+    type: string
+    label: Titel
+    description: "Die Überschrift, genau so, wie sie auf der Website erscheint."
+    required: true
+
+  feld_beschreibung:
+    type: rich-text
+    label: Beschreibung
+    description: "Der Text zum Eintrag. Mit der Symbolleiste können Sie Text fett machen sowie Links und Bilder einfügen."
+    options:
+      format: html
+      switcher: true
+      media: images
+
+  feld_bilder:
+    type: object
+    label: Bilder
+    description: "Die Bilder zu diesem Eintrag. Mit „+ Add“ fügen Sie ein Bild hinzu, per Ziehen ändern Sie die Reihenfolge."
+    list: true
+    fields:
+      - name: src
+        type: image
+        label: Bilddatei
+        description: "Klicken, um ein Bild auszuwählen oder ein neues hochzuladen."
+        required: true
+        options:
+          media: images
+      - name: alt
+        type: string
+        label: Bildbeschreibung (für Suchmaschinen und Sehbehinderte)
+        description: "In einem Satz beschreiben, was auf dem Bild zu sehen ist."
+      - name: caption
+        type: string
+        label: Bildunterschrift
+        description: "Wird unter dem Bild angezeigt. Darf leer bleiben."
+      - name: width
+        type: number
+        label: Breite in Pixeln
+        description: "Automatisch — bitte nicht ändern."
+      - name: height
+        type: number
+        label: Höhe in Pixeln
+        description: "Automatisch — bitte nicht ändern."
+
+  feld_sounds:
+    type: object
+    label: Sounds
+    description: "Musik- oder Tonaufnahmen zu diesem Eintrag (von SoundCloud). Kann leer bleiben."
+    list: true
+    fields:
+      - name: title
+        type: string
+        label: Titel des Tracks
+        description: "Der Name, der über dem Player angezeigt wird."
+        required: true
+      - name: url
+        type: string
+        label: Link
+        description: "Link zum SoundCloud-Track, z. B. https://soundcloud.com/..."
+        required: true
+        pattern:
+          regex: "^https?://.+"
+          message: "Bitte den vollständigen Link einfügen — er beginnt mit https://"
+
+# ---------------------------------------------------------------------------
+# Was in der Seitenleiste des CMS erscheint (Reihenfolge = Anzeige-Reihenfolge)
+# ---------------------------------------------------------------------------
+content:
+  - name: projects
+    label: Projekte
+    type: file
+    path: content/projects.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: id
+        component: feld_id
+      - name: title
+        component: feld_titel
+      - name: description
+        component: feld_beschreibung
+      - name: images
+        component: feld_bilder
+      - name: sounds
+        component: feld_sounds
+
+  - name: engagement
+    label: Engagement
+    type: file
+    path: content/engagement.json
+    format: json
+    list: true
+    operations:
+      delete: false
+    fields:
+      - name: id
+        component: feld_id
+      - name: title
+        component: feld_titel
+      - name: description
+        component: feld_beschreibung
+      - name: images
+        component: feld_bilder
+      - name: sounds
+        component: feld_sounds
+
+  - name: pages
+    label: Einzelne Seiten
+    type: group
+    items:
+      - name: about
+        label: About (Kirsten Palz)
+        type: file
+        path: content/pages/about.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: now
+        label: "// Now"
+        type: file
+        path: content/pages/now.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: cv
+        label: C.V. (Lebenslauf)
+        type: file
+        path: content/pages/cv.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: sculpture
+        label: Sculpture as Writing
+        type: file
+        path: content/pages/sculpture.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: absences
+        label: Inventory of Absences
+        type: file
+        path: content/pages/absences.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: ai-research
+        label: A.I. Artificial Intelligence
+        type: file
+        path: content/pages/ai-research.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
+
+      - name: thanks
+        label: Thanks (Dank)
+        type: file
+        path: content/pages/thanks.json
+        format: json
+        operations:
+          delete: false
+        fields:
+          - name: id
+            component: feld_id
+          - name: title
+            component: feld_titel
+          - name: description
+            component: feld_beschreibung
+          - name: images
+            component: feld_bilder
+          - name: sounds
+            component: feld_sounds
