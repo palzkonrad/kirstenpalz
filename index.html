@@ -2,8 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- viewport-fit=cover activates the env(safe-area-inset-*) values that
+         style.css already uses for notch/home-indicator clearance. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>KIRSTEN PALZ</title>
+
+    <!-- AP4: brutalist favicon — ink square, paper "KP". Inline data URI:
+         zero extra request, kills the 404 the missing icon caused. -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' fill='%230A0A0A'/%3E%3Ctext x='32' y='44' font-family='Archivo,Helvetica,Arial,sans-serif' font-size='30' font-weight='700' fill='%23FAFAF7' text-anchor='middle'%3EKP%3C/text%3E%3C/svg%3E">
 
     <!-- AP3 SEO basics. Copy mirrors content/pages/about.json; the og:image is
          the about portrait (absolute URL — scrapers don't resolve relative
@@ -20,7 +26,11 @@
     <meta property="og:image:height" content="808">
     <meta name="twitter:card" content="summary">
 
-    <link href="https://fonts.googleapis.com/css2?family=Helvetica+Neue:wght@400;700&display=swap" rel="stylesheet">
+    <!-- AP4: fonts are self-hosted (see the @font-face block in style.css).
+         The single variable woff2 covers Archivo AND Archivo Expanded and is
+         render-critical on every view, hence the preload. crossorigin is
+         required even same-origin — font fetches are CORS-mode requests. -->
+    <link rel="preload" href="fonts/archivo-latin-wdth-normal.woff2" as="font" type="font/woff2" crossorigin>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>

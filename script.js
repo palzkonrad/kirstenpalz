@@ -259,12 +259,19 @@ document.addEventListener('DOMContentLoaded', async () => {
             grid.className = data.images.length === 1
                 ? 'image-grid single-image'
                 : 'image-grid multi-image';
-            grid.style.marginTop = '40px';
+            // AP4: markup matches the CSS contract exactly —
+            //   .image-box > figure.image-frame > img  (+ p.image-caption)
+            // The .image-frame wrapper (overflow: hidden) is what makes the
+            // slow editorial hover zoom work; it was never rendered before.
+            // No inline styles: spacing/typography live in style.css
+            // (.image-grid margins, .image-box, .image-caption).
             data.images.forEach((image) => {
                 if (!image || !image.src) return;
                 const box = document.createElement('div');
                 box.className = 'image-box';
-                box.style.marginBottom = '30px';
+
+                const frame = document.createElement('figure');
+                frame.className = 'image-frame';
 
                 const img = document.createElement('img');
                 // Defensive: the CMS may save absolute paths; the site lives
@@ -274,13 +281,12 @@ document.addEventListener('DOMContentLoaded', async () => {
                 if (image.width) img.width = image.width;
                 if (image.height) img.height = image.height;
                 img.loading = 'lazy';
-                img.style.cssText = 'max-width:100%; height:auto; display:block; margin: 0 auto;';
-                box.appendChild(img);
+                frame.appendChild(img);
+                box.appendChild(frame);
 
                 if (image.caption) {
                     const caption = document.createElement('p');
                     caption.className = 'image-caption';
-                    caption.style.cssText = 'font-size: 12px; margin-top: 10px; text-align: left;';
                     caption.textContent = image.caption;
                     box.appendChild(caption);
                 }

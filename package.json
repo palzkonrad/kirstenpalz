@@ -6,6 +6,7 @@
     "optimize-images": "node tools/optimize-images.mjs"
   },
   "devDependencies": {
+    "@fontsource-variable/archivo": "^5.2.8",
     "sharp": "^0.35.3"
   }
 }

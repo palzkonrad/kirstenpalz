@@ -12,10 +12,41 @@
    handoff block at the bottom of this file.
    ============================================================ */
 
-/* Display = Archivo Expanded (poster width). Body/UI = Archivo.
-   Loaded here so the type system lives with the design layer;
-   the <link> in index.html may be consolidated to this. */
-@import url('https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Archivo+Expanded:wght@600;700;800&display=swap');
+/* ============================================================
+   FONTS — SELF-HOSTED (AP4: no Google Fonts requests, GDPR + perf)
+   ------------------------------------------------------------
+   One variable woff2 (Archivo, wght 100–900 + wdth 62–125%,
+   latin subset, OFL — see fonts/LICENSE, source:
+   @fontsource-variable/archivo) serves BOTH families:
+
+   - "Archivo"           → full axis ranges, renders at normal width.
+   - "Archivo Expanded"  → same file, but the font-stretch descriptor
+     is pinned to 125%, so the browser clamps the wdth axis to the
+     expanded cut — no font-stretch property needed in the rules.
+
+   The latin unicode-range covers all site content (incl. ü/ø/–/’);
+   the few CJK glyphs fall back to system fonts, as they always did.
+   index.html preloads this file (it is render-critical everywhere).
+   ============================================================ */
+@font-face {
+    font-family: 'Archivo';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    font-stretch: 62% 125%;
+    src: url('fonts/archivo-latin-wdth-normal.woff2') format('woff2-variations');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: 'Archivo Expanded';
+    font-style: normal;
+    font-display: swap;
+    font-weight: 100 900;
+    font-stretch: 125%;
+    src: url('fonts/archivo-latin-wdth-normal.woff2') format('woff2-variations');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 /* ============================================================
    TOKENS
@@ -27,7 +58,9 @@
     --border-color: #0A0A0A;
     --border-soft: rgba(10, 10, 10, 0.14);
     --border-hair: rgba(10, 10, 10, 0.28);
-    --muted: rgba(10, 10, 10, 0.50);
+    /* AP4: 0.50 composited to ~#828280 on paper = 3.68:1 — below WCAG AA
+       for the 10–11px labels/captions this is used on. 0.62 → 5.56:1. */
+    --muted: rgba(10, 10, 10, 0.62);
     --hover-bg: #ECECE7;
 
     /* Type families */
@@ -74,7 +107,7 @@
         --border-color: #F2F2EF;
         --border-soft: rgba(242, 242, 239, 0.18);
         --border-hair: rgba(242, 242, 239, 0.34);
-        --muted: rgba(242, 242, 239, 0.56);
+        --muted: rgba(242, 242, 239, 0.62); /* AP4: 7.01:1 on ink (AA) */
         --hover-bg: #161616;
     }
 }
@@ -241,35 +274,6 @@ body::before {
 /* Logo keeps its own treatment — no underline animation */
 .logo-link::after {
     display: none;
-}
-
-.sidebar-footer {
-    padding-top: 24px;
-}
-
-.footer-line {
-    height: 1px;
-    background-color: var(--border-color);
-    width: 100%;
-    margin-bottom: 16px;
-}
-
-.meta-line {
-    font-size: var(--fs-label);
-    letter-spacing: var(--track-label);
-    color: var(--muted);
-    margin-bottom: 6px;
-}
-
-.sub-link {
-    color: var(--text-color);
-    text-decoration: none;
-    font-size: 11px;
-    letter-spacing: 0.08em;
-}
-
-.sub-link:hover {
-    text-decoration: line-through;
 }
 
 /* ============================================================
@@ -516,44 +520,6 @@ body::before {
 }
 
 /* ============================================================
-   GRID LAYOUT FOR C.V. (legacy hook, kept)
-   ============================================================ */
-.brutalist-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
-
-.grid-cell {
-    border-top: 1px solid var(--border-color);
-    padding-top: 20px;
-}
-
-.grid-cell h4 {
-    font-size: 11px;
-    margin-bottom: 20px;
-    font-weight: 700;
-    letter-spacing: 0.14em;
-}
-
-.grid-cell p,
-.grid-cell ul {
-    font-size: 13px;
-    line-height: 1.7;
-    letter-spacing: 0.04em;
-}
-
-.grid-cell ul {
-    list-style-type: none;
-}
-
-.grid-cell ul li {
-    margin-bottom: 8px;
-    border-bottom: 1px solid var(--border-soft);
-    padding-bottom: 6px;
-}
-
-/* ============================================================
    BRUTALIST POST (LONG-FORM TEXT, C.V., PROJECT PAGES)
    ------------------------------------------------------------
    Readability is the priority here. The content is authored in
@@ -770,36 +736,6 @@ html.js [data-reveal].is-visible {
 }
 
 /* ============================================================
-   PLACEHOLDERS + CAPTIONS (legacy hooks, kept)
-   ============================================================ */
-.img-placeholder {
-    width: 100%;
-    height: 400px;
-    background-color: var(--hover-bg);
-    border: 1px solid var(--border-color);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-color);
-    font-size: 11px;
-    letter-spacing: 0.16em;
-    margin-bottom: 16px;
-}
-
-.img-placeholder.tall {
-    height: 600px;
-}
-
-.caption {
-    font-size: 11px;
-    font-weight: 700;
-    border-top: 1px solid var(--border-color);
-    padding-top: 12px;
-    display: flex;
-    justify-content: space-between;
-}
-
-/* ============================================================
    RESPONSIVENESS
    ============================================================ */
 /* ── Phone & small tablet (≤768px) ─────────────────────────── */
@@ -836,12 +772,6 @@ html.js [data-reveal].is-visible {
         margin-bottom: 4px;
     }
 
-    .sub-link {
-        display: inline-flex;
-        align-items: center;
-        min-height: 44px;
-    }
-
     .mobile-header {
         display: flex;
     }
@@ -854,11 +784,6 @@ html.js [data-reveal].is-visible {
             max(18px, env(safe-area-inset-right))
             calc(48px + env(safe-area-inset-bottom))
             max(18px, env(safe-area-inset-left));
-    }
-
-    .brutalist-grid {
-        grid-template-columns: 1fr;
-        gap: 20px;
     }
 
     .brutalist-item {
@@ -878,18 +803,10 @@ html.js [data-reveal].is-visible {
         line-height: 1.8;
     }
 
-    /* Detail-image stack: tighten the big top gap and placeholder heights
-       so phone scroll feels editorial, not cavernous. */
+    /* Detail-image stack: tighten the big top gap so phone scroll feels
+       editorial, not cavernous. */
     #detail-images .image-grid {
         margin-top: 32px;
-    }
-
-    .img-placeholder {
-        height: 260px;
-    }
-
-    .img-placeholder.tall {
-        height: 380px;
     }
 }
 
@@ -946,9 +863,6 @@ html.js [data-reveal].is-visible {
     .image-grid {
         gap: 22px;
     }
-
-    .img-placeholder { height: 220px; }
-    .img-placeholder.tall { height: 320px; }
 
     .logo-text-mobile {
         font-size: 13px;
